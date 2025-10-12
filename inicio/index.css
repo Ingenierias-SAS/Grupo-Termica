@@ -694,11 +694,437 @@ header {
   }
 }
 
+/* ===== BANNER SANITARIO ===== */
+.banner-sanitario {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  background: url('../img/banner-sanitario.png') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  animation: fadeIn 1.5s ease-out forwards;
+}
 
+.banner-sanitario .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45); /* oscurece el fondo */
+  z-index: 1;
+}
 
+.banner-texto {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+}
 
+.banner-texto h2 {
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 0;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
 
+/* ===== Animación ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .banner-sanitario {
+    height: 280px;
+  }
 
+  .banner-texto h2 {
+    font-size: 28px;
+  }
+}
 
+@media (max-width: 768px) {
+  .banner-sanitario {
+    height: 250px;
+  }
 
+  .banner-texto h2 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-sanitario {
+    height: 230px;
+  }
+
+  .banner-texto h2 {
+    font-size: 18px;
+  }
+}
+
+/* ===== SECCIÓN NUESTROS SERVICIOS ===== */
+.servicios {
+  width: 100%;
+  background: #fff;
+  padding: 100px 10%;
+  text-align: center;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  animation: fadeInUp 1.5s ease forwards;
+}
+
+.titulo-seccion {
+  color: #004C97;
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.subtitulo-seccion {
+  color: #004C97;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 60px;
+  letter-spacing: 1px;
+}
+
+/* ===== GRID ===== */
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  justify-items: center;
+  align-items: start;
+}
+
+.servicio {
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 300px;
+}
+
+.servicio:hover {
+  transform: translateY(-10px);
+}
+
+.servicio a {
+  display: inline-block;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.servicio a:hover {
+  transform: scale(1.05);
+}
+
+.servicio img {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.servicio h3 {
+  color: #0d1b2a;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.servicio p {
+  font-size: 15px;
+  color: #2c3e50;
+  line-height: 1.6;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .servicios-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .titulo-seccion {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .servicios {
+    padding: 80px 5%;
+  }
+
+  .servicios-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .servicio img {
+    max-width: 160px;
+  }
+
+  .titulo-seccion {
+    font-size: 32px;
+  }
+
+  .subtitulo-seccion {
+    font-size: 16px;
+  }
+}
+
+/* ===== BOTÓN "VER TODOS LOS SERVICIOS" ===== */
+.servicios-boton {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.btn-ver-servicios {
+  background-color: #004C97;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 14px 45px;
+  border-radius: 40px;
+  display: inline-block;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.btn-ver-servicios:hover {
+  background-color: #003877;
+  transform: scale(1.08);
+  box-shadow: 0 6px 15px rgba(0, 76, 151, 0.4);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .btn-ver-servicios {
+    font-size: 15px;
+    padding: 12px 35px;
+  }
+}
+
+/* ===== EMPRESAS ALIADAS ===== */
+.empresas-aliadas {
+  width: 100%;
+  background-color: #f5f5f5; /* fondo gris claro */
+  padding: 90px 5%;
+  text-align: center;
+  box-sizing: border-box;
+  animation: fadeInUp 1.5s ease forwards;
+}
+
+.empresas-aliadas h2 {
+  font-size: 54px;                /* 🔹 mucho más grande */
+  font-weight: 900;
+  margin-bottom: 60px;
+  color: #555;
+  letter-spacing: 1px;
+}
+
+.empresas-aliadas .azul {
+  color: #004C97;
+}
+
+/* ===== GRID DE LOGOS ===== */
+.logos-aliados {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  row-gap: 50px;
+}
+
+.logos-aliados img {
+  height: auto;
+  width: 160px; /* tamaño base */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.logos-aliados img:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+/* 🔹 Ajuste especial para las dos primeras imágenes */
+.logos-aliados .logo-grande {
+  width: 200px; /* aumenta el tamaño ligeramente */
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .empresas-aliadas h2 {
+    font-size: 42px;
+  }
+
+  .logos-aliados {
+    gap: 45px;
+  }
+
+  .logos-aliados img {
+    width: 140px;
+  }
+
+  .logos-aliados .logo-grande {
+    width: 170px;
+  }
+}
+
+@media (max-width: 768px) {
+  .empresas-aliadas {
+    padding: 70px 5%;
+  }
+
+  .empresas-aliadas h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+
+  .logos-aliados {
+    gap: 35px;
+  }
+
+  .logos-aliados img {
+    width: 120px;
+  }
+
+  .logos-aliados .logo-grande {
+    width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .empresas-aliadas h2 {
+    font-size: 30px;
+  }
+
+  .logos-aliados {
+    gap: 25px;
+  }
+
+  .logos-aliados img {
+    width: 100px;
+  }
+
+  .logos-aliados .logo-grande {
+    width: 130px;
+  }
+}
+
+/* ===== BANNER FINAL DE CONTACTO ===== */
+.banner-contacto {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background: url('../img/plagas.png') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  /* 🔹 Elimina cualquier separación no deseada */
+  margin: 0;
+  padding: 0;
+  border: none;
+  line-height: 0;
+}
+
+.banner-contacto .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.55);
+  z-index: 1;
+}
+
+/* ===== TEXTO CENTRAL ===== */
+.contenido-banner {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  padding: 0;
+}
+
+.texto-contacto {
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 70px;
+  text-decoration: none;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  display: inline-block;
+  line-height: 1;
+}
+
+/* 🔹 Efecto al pasar el mouse: subrayado suave */
+.texto-contacto::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 4px;
+  background: #004C97;
+  transition: width 0.4s ease;
+  margin: 10px auto 0 auto;
+  border-radius: 2px;
+}
+
+.texto-contacto:hover::after {
+  width: 100%;
+}
+
+.texto-contacto:hover {
+  color: #cfe4ff;
+}
+
+/* ===== GARANTIZA PEGADO AL FOOTER ===== */
+.banner-contacto + .footer {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .banner-contacto {
+    height: 350px;
+  }
+  .texto-contacto {
+    font-size: 56px;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner-contacto {
+    height: 300px;
+  }
+  .texto-contacto {
+    font-size: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-contacto {
+    height: 260px;
+  }
+  .texto-contacto {
+    font-size: 34px;
+  }
+}
