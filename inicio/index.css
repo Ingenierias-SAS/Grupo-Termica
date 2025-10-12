@@ -1,0 +1,704 @@
+/* ===== FUENTE ===== */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+/* ===== HEADER ===== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 🔹 centra todo el bloque */
+  padding: 10px 0; /* elimina espacios laterales */
+  z-index: 1000;
+  box-sizing: border-box;
+  gap: 40px; /* espacio equilibrado entre logo, menú y botón */
+}
+
+.logo img {
+  width: 80px;
+  height: auto;
+  margin: 0;
+  display: block;
+}
+
+/* ===== NAVEGACIÓN ===== */
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 35px; /* espaciado entre enlaces */
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+
+nav ul li a.active {
+  color: #00ff88; /* Verde similar al de la imagen */
+}
+
+nav ul li a:hover {
+  color: #00ff88;
+}
+
+/* ===== BOTÓN WHATSAPP HEADER ===== */
+.whatsapp-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whatsapp-btn a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: white;
+  border: 2px solid #fff;
+  padding: 8px 16px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-weight: 600;
+}
+
+.whatsapp-btn a:hover {
+  background: #25D366;
+  border-color: #25D366;
+}
+
+.whatsapp-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+/* ===== MENÚ HAMBURGUESA (oculto en PC) ===== */
+#menu-toggle {
+  display: none;
+  background: none;
+  color: white;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  width: 100%;
+  height: 100vh;
+  background: url('../img/fondo.png') no-repeat center center/cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.hero .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content h1 {
+  font-size: 72px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+
+.btn-contacto {
+  display: inline-block;
+  padding: 12px 40px;
+  border: 3px solid white;
+  border-radius: 40px;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-contacto:hover {
+  background: #004C97;
+  color: #fff;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .hero-content h1 {
+    font-size: 52px;
+  }
+  .hero-content p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.9);
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  #menu-toggle {
+    display: block;
+  }
+
+  .whatsapp-btn {
+    display: none;
+  }
+
+  .hero-content h1 {
+    font-size: 42px;
+  }
+  .hero-content p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 32px;
+  }
+  .btn-contacto {
+    padding: 10px 28px;
+  }
+}
+
+/* ===== BARRA LATERAL REDES SOCIALES (PC A LA DERECHA / MÓVIL CENTRADA) ===== */
+.social-bar {
+  position: fixed;
+  bottom: 30px;
+  right: 25px;
+  background-color: #004C97;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  padding: 15px 10px;
+  border-radius: 12px;
+  z-index: 2000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  animation: slideInRight 1s ease-out forwards;
+  animation-delay: 1.4s;
+  transition: all 0.3s ease-in-out;
+}
+
+.social-bar a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-bar a:hover {
+  transform: scale(1.2);
+  opacity: 0.85;
+}
+
+.social-bar img {
+  width: 25px;
+  height: 25px;
+  filter: brightness(0) invert(1);
+}
+
+/* ===== ANIMACIÓN ENTRADA DESDE DERECHA ===== */
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ===== RESPONSIVE — CENTRADA EN MÓVIL ===== */
+@media (max-width: 768px) {
+  .social-bar {
+    position: fixed;
+    bottom: 20px;                 /* 🔹 margen inferior seguro */
+    left: 50%;                    /* 🔹 centrada horizontalmente */
+    transform: translateX(-50%);  /* 🔹 corrige el centrado */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 76, 151, 0.95);
+    width: fit-content;           /* 🔹 ajusta ancho exacto al contenido */
+    padding: 12px 20px;
+    border-radius: 40px;
+    gap: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 1.2s;
+  }
+
+  .social-bar img {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* ===== ANIMACIÓN SUAVE PARA MÓVIL ===== */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ===== ANIMACIÓN SUAVE PARA MÓVIL ===== */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ===== ANIMACIONES GENERALES ===== */
+
+/* Animación de aparición suave con desplazamiento */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animación de entrada del header desde arriba */
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animación de entrada lateral izquierda */
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ===== APLICACIÓN DE EFECTOS ===== */
+
+/* Header */
+header {
+  opacity: 0;
+  animation: slideDown 1.2s ease-out forwards;
+  animation-delay: 0.1s;
+}
+
+/* Textos del hero */
+.hero-content h1 {
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.hero-content p {
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.6s;
+}
+
+.btn-contacto {
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.9s;
+}
+
+/* Barra de redes */
+.social-bar {
+  opacity: 0; /* 🔹 Oculta inicialmente */
+  animation: slideInLeft 1.2s ease-out forwards;
+  animation-delay: 1.4s; /* 🔹 Aparece después del resto */
+}
+
+/* ===== EFECTO HOVER ZOOM EN BOTÓN CONTACTO ===== */
+.btn-contacto {
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.btn-contacto:hover {
+  background: #004C97;
+  color: #fff;
+  transform: scale(1.1); /* 🔹 Zoom suave */
+}
+
+/* ===== SECCIÓN SOBRE NOSOTROS ===== */
+.sobre-nosotros {
+  width: 100%;
+  padding: 100px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  background: #fff;
+  color: #222;
+  box-sizing: border-box;
+  opacity: 0;
+  animation: fadeInUp 1.5s ease forwards;
+  animation-delay: 1.2s;
+}
+
+/* Texto */
+.texto-nosotros {
+  flex: 1 1 500px;
+  max-width: 700px;
+}
+
+.texto-nosotros h2 {
+  font-size: 60px;
+  font-weight: 700;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.texto-nosotros p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.texto-nosotros strong {
+  color: #000;
+}
+
+/* Imagen */
+.imagen-nosotros {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagen-nosotros img {
+  max-width: 420px;
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  animation: zoomIn 1.3s ease forwards;
+  opacity: 0;
+  animation-delay: 1.6s;
+}
+
+/* Botón */
+.btn-vermas {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #004C97;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 25px;
+  padding: 12px 28px;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  border: none;
+}
+
+.btn-vermas:hover {
+  background: #003877;
+  transform: scale(1.08);
+}
+
+.icono {
+  font-size: 18px;
+}
+
+/* Animación extra para la imagen */
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .sobre-nosotros {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+    padding: 80px 5%;
+  }
+
+  .texto-nosotros h2 {
+    font-size: 42px;
+  }
+
+  .texto-nosotros p {
+    font-size: 16px;
+  }
+
+  .imagen-nosotros img {
+    max-width: 300px;
+  }
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background-color: #0d141d;
+  color: #fff;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 100px;
+  overflow-x: hidden;
+}
+
+/* ===== SECCIÓN SUPERIOR ===== */
+.footer-top {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 60px 10%;
+  background-color: #0f1a24;
+  gap: 50px;
+  text-align: center;
+}
+
+.footer-item {
+  flex: 1 1 300px;
+  min-width: 260px;
+  max-width: 350px;
+}
+
+.footer-item h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.footer-item p {
+  margin: 6px 0;
+  color: #bfc6cc;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.footer-line {
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #004C97;
+  margin: 0 auto 15px auto;
+  border-radius: 3px;
+}
+
+/* ===== BOTÓN CONTÁCTANOS ===== */
+.footer-middle {
+  background-color: #0d141d;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.btn-contactanos {
+  background-color: #004C97;
+  color: #fff;
+  border: none;
+  padding: 14px 50px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.btn-contactanos:hover {
+  transform: scale(1.1);
+  background-color: #003877;
+}
+
+/* ===== PARTE INFERIOR ===== */
+.footer-bottom {
+  background-color: #aeb4b6;
+  color: #111;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 8px 0;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+
+.footer-bottom hr {
+  width: 180px;
+  margin: 25px auto;
+  border: 1px solid #004C97;
+}
+
+/* ===== ÍCONOS DE REDES ===== */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.social-icons a img {
+  width: 28px;
+  height: 28px;
+  filter: invert(17%) sepia(96%) saturate(2184%) hue-rotate(198deg) brightness(92%) contrast(102%);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.2);
+  opacity: 0.8;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+    padding: 50px 5%;
+  }
+
+  .footer-item {
+    max-width: 100%;
+  }
+
+  .footer-item h3 {
+    font-size: 20px;
+  }
+
+  .footer-item p {
+    font-size: 15px;
+  }
+
+  .btn-contactanos {
+    padding: 12px 35px;
+    font-size: 15px;
+  }
+
+  .footer-bottom {
+    padding: 40px 10px;
+  }
+
+  .footer-bottom p {
+    font-size: 14px;
+  }
+
+  .social-icons {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-top {
+    padding: 40px 5%;
+    gap: 30px;
+  }
+
+  .footer-item h3 {
+    font-size: 18px;
+  }
+
+  .footer-line {
+    width: 50px;
+    height: 3px;
+  }
+
+  .btn-contactanos {
+    padding: 10px 28px;
+    font-size: 14px;
+  }
+
+  .footer-bottom hr {
+    width: 120px;
+  }
+
+  .social-icons a img {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+
+
+
+
+
+
+
+
