@@ -585,3 +585,430 @@ header {
     height: 26px;
   }
 }
+
+/* ===== BANNER BAJO HEADER ===== */
+.banner-sub {
+  position: relative;
+  width: 100%;
+  height: 60vh; /* altura del banner */
+  background: url('../img/cocinaban.png') no-repeat center center/cover; /* 🖼️ cambia por tu imagen */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Capa de opacidad */
+.banner-sub .banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45); /* oscurece ligeramente la imagen */
+  z-index: 1;
+}
+
+/* Texto principal */
+.banner-sub .banner-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+}
+
+.banner-sub .banner-content h1 {
+  font-size: 64px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0;
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+/* ===== ANIMACIÓN SUAVE ===== */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .banner-sub {
+    height: 45vh;
+  }
+
+  .banner-sub .banner-content h1 {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 600px) {
+  .banner-sub {
+    height: 40vh;
+  }
+
+  .banner-sub .banner-content h1 {
+    font-size: 34px;
+  }
+}
+
+/* ===== SECCIÓN QUIÉNES SOMOS ===== */
+.quienes-somos {
+  width: 100%;
+  background: #fff;
+  padding: 100px 10%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.qs-contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  flex-wrap: wrap; /* permite adaptar en pantallas pequeñas */
+  max-width: 1300px;
+}
+
+.qs-imagen img {
+  width: 350px;
+  height: auto;
+  border-radius: 50%;
+  transition: transform 0.4s ease;
+}
+
+.qs-imagen img:hover {
+  transform: scale(1.05);
+}
+
+.qs-texto {
+  max-width: 650px;
+}
+
+.qs-texto h2 {
+  font-size: 54px;
+  font-weight: 800;
+  color: #0a1445;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
+.qs-texto p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .qs-contenedor {
+    flex-direction: column;
+    gap: 50px;
+    text-align: center;
+  }
+
+  .qs-texto h2 {
+    font-size: 42px;
+  }
+
+  .qs-texto p {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 576px) {
+  .qs-imagen img {
+    width: 260px;
+  }
+
+  .qs-texto h2 {
+    font-size: 32px;
+  }
+
+  .qs-texto p {
+    font-size: 16px;
+  }
+
+  .quienes-somos {
+    padding: 60px 6%;
+  }
+}
+
+/* ===== SECCIÓN VISIÓN ===== */
+.vision {
+  width: 100%;
+  background-color: #f5f6f7; /* 🔹 fondo gris claro */
+  padding: 100px 10%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vision-contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  max-width: 1300px;
+  flex-wrap: wrap;
+}
+
+/* ===== Texto ===== */
+.vision-texto {
+  flex: 1 1 550px;
+  color: #333;
+  animation: fadeInLeft 1.2s ease forwards;
+}
+
+.vision-titulo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.vision-titulo img {
+  width: 40px;
+  height: auto;
+  filter: brightness(0) saturate(100%) invert(18%) sepia(99%) saturate(1995%) hue-rotate(196deg) brightness(90%) contrast(98%);
+}
+
+.vision-titulo h2 {
+  color: #004C97;
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.vision-texto p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #555;
+  text-align: justify;
+}
+
+/* ===== Imagen ===== */
+.vision-imagen {
+  flex: 1 1 450px;
+  display: flex;
+  justify-content: center;
+  animation: fadeInRight 1.2s ease forwards;
+}
+
+.vision-imagen img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.vision-imagen img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* ===== ANIMACIONES ===== */
+@keyframes fadeInLeft {
+  0% { opacity: 0; transform: translateX(-50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  0% { opacity: 0; transform: translateX(50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .vision-contenedor {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .vision-texto {
+    animation: fadeInUp 1s ease forwards;
+  }
+
+  .vision-imagen img {
+    max-width: 350px;
+  }
+
+  .vision-titulo {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .vision {
+    padding: 70px 6%;
+  }
+
+  .vision-titulo h2 {
+    font-size: 32px;
+  }
+
+  .vision-texto p {
+    font-size: 16px;
+  }
+}
+
+/* ===== SECCIÓN MISIÓN ===== */
+.mision {
+  width: 100%;
+  background-color: #ffffff; /* 🔹 Fondo blanco */
+  padding: 100px 10%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mision-contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  max-width: 1300px;
+  flex-wrap: wrap;
+}
+
+/* ===== Imagen ===== */
+.mision-imagen {
+  flex: 1 1 450px;
+  display: flex;
+  justify-content: center;
+  animation: fadeInLeft 1.2s ease forwards;
+}
+
+.mision-imagen img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.mision-imagen img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* ===== Texto ===== */
+.mision-texto {
+  flex: 1 1 550px;
+  color: #333;
+  animation: fadeInRight 1.2s ease forwards;
+}
+
+.mision-titulo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.mision-titulo img {
+  width: 40px;
+  height: auto;
+  filter: brightness(0) saturate(100%) invert(18%) sepia(99%) saturate(1995%) hue-rotate(196deg) brightness(90%) contrast(98%);
+}
+
+.mision-titulo h2 {
+  color: #004C97;
+  font-size: 40px;
+  font-weight: 800;
+}
+
+/* ===== Texto descriptivo ===== */
+.mision-texto p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+/* ===== Lista ===== */
+.mision-texto ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.mision-texto ul li {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 25px;
+}
+
+.mision-texto ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #004C97;
+  font-weight: bold;
+}
+
+/* ===== ANIMACIONES ===== */
+@keyframes fadeInLeft {
+  0% { opacity: 0; transform: translateX(-50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  0% { opacity: 0; transform: translateX(50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .mision-contenedor {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .mision-texto {
+    animation: fadeInUp 1s ease forwards;
+  }
+
+  .mision-titulo {
+    justify-content: center;
+  }
+
+  .mision-imagen img {
+    max-width: 350px;
+  }
+
+  .mision-texto ul li {
+    text-align: left;
+    padding-left: 35px;
+  }
+}
+
+@media (max-width: 576px) {
+  .mision {
+    padding: 70px 6%;
+  }
+
+  .mision-titulo h2 {
+    font-size: 32px;
+  }
+
+  .mision-texto p {
+    font-size: 16px;
+  }
+}
+
