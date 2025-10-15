@@ -3,30 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grupo Térmica</title>
+  <title>Blog | Grupo Térmica</title>
   <link rel="stylesheet" href="blog.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- ===== BARRA LATERAL DE REDES ===== -->
-<div class="social-bar">
-  <a href="https://www.facebook.com/people/Asesoria-Termica/100082814800443/?sk=about&locale=es_LA" target="_blank">
-    <img src="../img/facebook.png" alt="Facebook">
-  </a>
-  <a href="https://www.linkedin.com/in/eduardogomezmendigaña2020?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
-    <img src="../img/linkedin.png" alt="LinkedIn">
-  </a>
-  <a href="https://www.instagram.com/asesoriaeduardogomez25/?utm_source=qr&igsh=ZjZtMzh0cTB6Yjk2" target="_blank">
-    <img src="../img/instagram.png" alt="Instagram">
-  </a>
-  <a href="https://w.app/xsh6of" target="_blank">
-    <img src="../img/whatsapp.png" alt="WhatsApp">
-  </a>
-</div>
-
+  <!-- ===== BARRA LATERAL REDES ===== -->
+  <div class="social-bar">
+    <a href="https://www.facebook.com/people/Asesoria-Termica/100082814800443/?sk=about&locale=es_LA" target="_blank">
+      <img src="../img/facebook.png" alt="Facebook">
+    </a>
+    <a href="https://www.linkedin.com/in/eduardogomezmendigaña2020" target="_blank">
+      <img src="../img/linkedin.png" alt="LinkedIn">
+    </a>
+    <a href="https://www.instagram.com/asesoriaeduardogomez25" target="_blank">
+      <img src="../img/instagram.png" alt="Instagram">
+    </a>
+    <a href="https://w.app/xsh6of" target="_blank">
+      <img src="../img/whatsapp.png" alt="WhatsApp">
+    </a>
+  </div>
 
   <!-- ===== HEADER ===== -->
   <header>
@@ -35,75 +32,128 @@
     </div>
     <nav id="menu-nav">
       <ul>
-        <li><a href="../index.html" class="active">INICIO</a></li>
+        <li><a href="../index.html">INICIO</a></li>
         <li><a href="../Nosotros/nosotros.html">NOSOTROS</a></li>
         <li><a href="../Servicios/servicios.html">SERVICIOS</a></li>
-        <li><a href="../Contacto/contacto.html">CONTACTO</a></li>
         <li><a href="../Producto/producto.html">PRODUCTOS</a></li>
-        <li><a href="../Blog/blog.html">BLOG</a></li>
+        <li><a href="../Contacto/contacto.html">CONTACTO</a></li>
+        <li><a href="../Blog/blog.html" class="active">BLOG</a></li>
       </ul>
     </nav>
 
     <div class="whatsapp-btn">
       <a href="https://wa.me/573205130615" target="_blank">
-        <img src="../img/whatsapp.png" alt="WhatsApp">
-        320 295 5059
+        <img src="../img/whatsapp.png" alt="WhatsApp"> 320 295 5059
       </a>
     </div>
 
     <button id="menu-toggle" aria-label="Abrir menú">&#9776;</button>
   </header>
 
+  <!-- ===== SECCIÓN BLOG ===== -->
+<section class="blog-section">
+  <h2>BLOG</h2>
+
+  <!-- Botón para abrir el modal -->
+  <button id="new-blog-btn" class="btn-new-blog">➕ Crear nuevo blog</button>
+
+  <!-- ===== MODAL PARA CREAR/EDITAR ===== -->
+  <div id="blog-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3 id="modal-title">Crear Nuevo Blog</h3>
+      <form id="blog-form">
+        <input type="text" id="blog-title" placeholder="Título del blog" required>
+        <textarea id="blog-content" placeholder="Contenido del blog" required></textarea>
+        <label for="blog-category">Categoría:</label>
+        <select id="blog-category" required>
+          <option value="">Seleccionar...</option>
+          <option value="salud">Salud y Seguridad</option>
+          <option value="saneamiento">Saneamiento</option>
+          <option value="aire">Calidad de Aire Interior</option>
+        </select>
+        <label>Imagen:</label>
+        <input type="file" id="blog-image" accept="image/*">
+        <input type="password" id="admin-key" placeholder="Clave de administrador" required>
+        <button type="submit" id="save-blog-btn">Guardar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===== MODAL PARA VER BLOG ===== -->
+  <div id="view-modal" class="modal">
+    <div class="modal-content view-content">
+      <span class="close-view">&times;</span>
+      <img id="view-img" alt="">
+      <h3 id="view-title"></h3>
+      <p id="view-text"></p>
+    </div>
+  </div>
+
+  <!-- ===== LISTADO DE BLOGS ===== -->
+  <div class="blog-container">
+    <div class="blog-category">
+      <h3>🧯 Salud y Seguridad</h3>
+      <div id="salud-blogs" class="blog-list"></div>
+    </div>
+
+    <div class="blog-category">
+      <h3>💧 Saneamiento</h3>
+      <div id="saneamiento-blogs" class="blog-list"></div>
+    </div>
+
+    <div class="blog-category">
+      <h3>🌬️ Calidad de Aire Interior</h3>
+      <div id="aire-blogs" class="blog-list"></div>
+    </div>
+  </div>
+</section>
+
   
 
-
-
-
-
-
-
-<!-- ===== FOOTER ===== -->
-<footer class="footer">
-  <div class="footer-top">
-    <div class="footer-item">
-      <h3>DIRECCIÓN</h3>
-      <span class="footer-line"></span>
-      <p>Cra. 39A #33-37, Puente Aranda, Bogotá</p>
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-item">
+        <h3>DIRECCIÓN</h3>
+        <span class="footer-line"></span>
+        <p>Cra. 39A #33-37, Puente Aranda, Bogotá</p>
+      </div>
+      <div class="footer-item">
+        <h3>ESCRÍBENOS</h3>
+        <span class="footer-line"></span>
+        <p>320 295 5059</p>
+        <p>601 720 9119</p>
+        <p>Grupotermica2023@gmail.com</p>
+      </div>
+      <div class="footer-item">
+        <h3>HORARIO</h3>
+        <span class="footer-line"></span>
+        <p>Lun - Vie: 9am - 8pm</p>
+        <p>Sábado: 8am - 12m</p>
+      </div>
     </div>
-    <div class="footer-item">
-      <h3>ESCRÍBENOS</h3>
-      <span class="footer-line"></span>
-      <p>320 295 5059</p>
-      <p>601 720 9119</p>
-      <p>Grupotermica2023@gmail.com</p>
-    </div>
-    <div class="footer-item">
-      <h3>HORARIO</h3>
-      <span class="footer-line"></span>
-      <p>Lun - Vie: 9am - 8pm</p>
-      <p>Sábado: 8am - 12m</p>
-    </div>
-  </div>
 
-  <div class="footer-middle">
-    <a href="Contacto/contacto.html" class="btn-contactanos">CONTÁCTANOS</a>
-  </div>
-
-  <div class="footer-bottom">
-    <p>SÍGUENOS EN NUESTRAS REDES SOCIALES</p>
-    <div class="social-icons">
-      <a href="https://www.facebook.com/people/Asesoria-Termica/100082814800443/?sk=about&locale=es_LA"><img src="../img/facebookA.png" alt="Facebook"></a>
-      <a href="https://www.instagram.com/asesoriaeduardogomez25/?utm_source=qr&igsh=ZjZtMzh0cTB6Yjk2"><img src="../img/instagramA.png" alt="Instagram"></a>
-      <a href="https://www.linkedin.com/in/eduardogomezmendigaña2020?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img src="../img/linkedinA.png" alt="LinkedIn"></a>
-      <a href="https://w.app/xsh6of"><img src="../img/whatsappA.png" alt="WhatsApp"></a>
+    <div class="footer-middle">
+      <a href="../Contacto/contacto.html" class="btn-contactanos">CONTÁCTANOS</a>
     </div>
-    <hr>
-    <p>GRUPO TÉRMICA © 2025</p>
-    <p>320 295 5059 | GRUPOTERMICA2023@GMAIL.COM</p>
-  </div>
-</footer>
 
+    <div class="footer-bottom">
+      <p>SÍGUENOS EN NUESTRAS REDES SOCIALES</p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/people/Asesoria-Termica/100082814800443/?sk=about&locale=es_LA"><img src="../img/facebookA.png" alt="Facebook"></a>
+        <a href="https://www.instagram.com/asesoriaeduardogomez25"><img src="../img/instagramA.png" alt="Instagram"></a>
+        <a href="https://www.linkedin.com/in/eduardogomezmendigaña2020"><img src="../img/linkedinA.png" alt="LinkedIn"></a>
+        <a href="https://w.app/xsh6of"><img src="../img/whatsappA.png" alt="WhatsApp"></a>
+      </div>
+      <hr>
+      <p>GRUPO TÉRMICA © 2025</p>
+      <p>320 295 5059 | GRUPOTERMICA2023@GMAIL.COM</p>
+    </div>
+  </footer>
 
   <script src="blog.js"></script>
 </body>
 </html>
+
+

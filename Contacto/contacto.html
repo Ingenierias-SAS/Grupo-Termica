@@ -54,11 +54,99 @@
     <button id="menu-toggle" aria-label="Abrir menú">&#9776;</button>
   </header>
 
+  <!-- ===== BANNER CONTACTO ===== -->
+<section class="banner-contacto">
+  <div class="banner-contenido">
+    <h2>Contacto</h2>
+    <button class="btn-agendar">Agenda Tu Cita</button>
+  </div>
+</section>
 
+<!-- ===== SECCIÓN MAPA Y CONTACTO ===== -->
+<section class="contacto-section">
 
+  <!-- MAPA -->
+  <div class="mapa-container">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.986881965043!2d-74.12429728870666!3d4.596372342532355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f992d0e0c448b%3A0x8979deae60a3d2cb!2zQ3JhLiAzOUEgIyAzMy0zNywgUHVlbnRlIEFyYW5kYSwgQm9nb3TDoSwgRC5DLiwgQm9nb3TDoSwgQm9nb3TDoSwgRC5DLg!5e0!3m2!1ses-419!2sco!4v1760494081232!5m2!1ses-419!2sco"
+      width="100%"
+      height="400"
+      style="border:0; border-radius: 20px;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
 
+  <!-- INFORMACIÓN DE CONTACTO -->
+  <div class="info-contacto">
+    <h2>CONTÁCTANOS</h2>
+    <p>Estamos listos para atender tus solicitudes y ofrecerte soluciones sanitarias personalizadas.</p>
 
+    <div class="contacto-cards">
+      <div class="card-contacto">
+        <img src="../img/correoA.png" alt="E-mail">
+        <div>
+          <h3>E-mail</h3>
+          <p>infogrupotermica2025@gmail.com</p>
+        </div>
+      </div>
 
+      <div class="card-contacto">
+        <img src="../img/whatsappA.png" alt="WhatsApp">
+        <div>
+          <h3>WhatsApp</h3>
+          <p>320 513 0615</p>
+        </div>
+      </div>
+
+      <div class="card-contacto">
+        <img src="../img/telefonoA.png" alt="PBX">
+        <div>
+          <h3>PBX</h3>
+          <p>(601) 720 9119</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FORMULARIO AGENDA TU CITA ===== -->
+  <section class="agenda-section" id="formulario-cita">
+    <h1><span style="color:#004C97;"></span> <span style="color:#5c5555;">AGENDA TU CITA</span></h1>
+
+    <form id="form-cita"
+      action="https://docs.google.com/forms/d/e/1FAIpQLSepTVnpXmmg0SQOzkIhjzdjfzOG1B6x_EmbMGXZXYt1bXnMHw/formResponse"
+      method="POST"
+      target="hidden_iframe"
+      onsubmit="enviarFormulario(event)">
+      
+      <label>Nombre completo *</label>
+      <input type="text" name="entry.1445314431" required>
+
+      <label>Teléfono *</label>
+      <input type="tel" name="entry.2068947764" required placeholder="Ej: 321 1234567">
+
+      <label>Correo electrónico *</label>
+      <input type="email" name="entry.1282636307" required>
+
+      <label>Servicio *</label>
+      <select name="entry.1153562001" required>
+        <option value="Manipulación de Alimentos">Manipulación de Alimentos</option>
+        <option value="Control de Plagas">Control de Plagas</option>
+        <option value="Calidad del Aire">Calidad del Aire</option>
+        <option value="Gestión Sanitaria">Gestión Sanitaria</option>
+      </select>
+
+      <label>Mensaje *</label>
+      <textarea name="entry.2112468871" rows="4" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+    <div id="toast" class="toast">✅ Tu cita fue registrada exitosamente.</div>
+  </section>
 
 <!-- ===== FOOTER ===== -->
 <footer class="footer">

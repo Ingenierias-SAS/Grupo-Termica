@@ -585,3 +585,305 @@ header {
     height: 26px;
   }
 }
+
+/* ===== BANNER PRODUCTOS ===== */
+.banner-productos {
+  position: relative;
+  width: 100%;
+  height: 45vh; /* altura adaptable */
+  background: url('../img/banner-productos.png') no-repeat center center/cover; /* 🔹 reemplaza por tu imagen */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.banner-productos .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45); /* 🔹 capa oscura para resaltar texto */
+  z-index: 1;
+}
+
+.banner-productos .banner-contenido {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+.banner-productos h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  color: #fff;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .banner-productos {
+    height: 40vh;
+  }
+
+  .banner-productos h2 {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner-productos {
+    height: 35vh;
+  }
+
+  .banner-productos h2 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-productos {
+    height: 30vh;
+  }
+
+  .banner-productos h2 {
+    font-size: 26px;
+  }
+}
+
+/* ===== SECCIONES DE PRODUCTOS ===== */
+.productos-section {
+  padding: 80px 40px;
+  text-align: center;
+  background: #f9fafc;
+}
+
+.productos-section:nth-child(even) {
+  background: #ffffff;
+}
+
+.productos-section h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: #4c4c4c;
+  margin-bottom: 50px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+/* ===== GRID GENERAL ===== */
+.productos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== AUTOCUIDADO PERSONAL (8 → 4x2) ===== */
+.productos-section:nth-of-type(1) .productos-grid .producto-card {
+  flex: 1 1 calc(25% - 30px);
+  max-width: calc(25% - 30px);
+}
+
+/* ===== LIMPIEZA (igual responsive que Autocuidado) ===== */
+.productos-section:nth-of-type(2) .productos-grid .producto-card {
+  flex: 1 1 calc(25% - 30px);
+  max-width: calc(25% - 30px);
+}
+
+/* ===== FERROAGRO (2 productos centrados pero mismo tamaño) ===== */
+.productos-section:nth-of-type(3) .productos-grid {
+  justify-content: center;
+}
+
+.productos-section:nth-of-type(3) .productos-grid .producto-card {
+  flex: 1 1 calc(25% - 30px);
+  max-width: calc(25% - 30px);
+}
+
+/* ===== CARD ===== */
+.producto-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  text-align: center;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.producto-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 76, 151, 0.25);
+}
+
+/* ===== IMÁGENES ===== */
+.producto-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain; /* ✅ muestra completa sin recortar */
+  background-color: #f5f5f5;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  transition: transform 0.4s ease;
+}
+
+.producto-card:hover img {
+  transform: scale(1.05);
+}
+
+/* ===== TÍTULOS ===== */
+.producto-card h3 {
+  padding: 15px 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #004C97;
+  text-transform: uppercase;
+}
+
+/* ===== BOTÓN DESCARGAR CATÁLOGO ===== */
+.catalogo-container {
+  width: 100%;
+  background: linear-gradient(90deg, #004C97 0%, #0073d1 100%);
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.btn-catalogo {
+  background: #fff;
+  color: #004C97;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 16px 40px;
+  border-radius: 50px;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  display: inline-block;
+}
+
+.btn-catalogo:hover {
+  background: #004C97;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* <= 1200px */
+@media (max-width: 1200px) {
+  .productos-section h2 {
+    font-size: 36px;
+  }
+
+  .producto-card {
+    height: 300px;
+  }
+
+  .producto-card img {
+    height: 200px;
+  }
+
+  /* 🔹 Autocuidado + Limpieza bajan a 3 columnas */
+  .productos-section:nth-of-type(1) .productos-grid .producto-card,
+  .productos-section:nth-of-type(2) .productos-grid .producto-card {
+    flex: 1 1 calc(33.333% - 30px);
+    max-width: calc(33.333% - 30px);
+  }
+
+  /* 🔹 FerroAgro centrado, igual tamaño */
+  .productos-section:nth-of-type(3) .productos-grid .producto-card {
+    flex: 1 1 calc(33.333% - 30px);
+    max-width: calc(33.333% - 30px);
+  }
+}
+
+/* <= 992px */
+@media (max-width: 992px) {
+  .productos-section {
+    padding: 70px 30px;
+  }
+
+  .productos-section h2 {
+    font-size: 34px;
+  }
+
+  .producto-card {
+    height: 280px;
+  }
+
+  .producto-card img {
+    height: 180px;
+  }
+
+  /* 🔹 2 columnas en Autocuidado, Limpieza y FerroAgro */
+  .productos-section:nth-of-type(1) .productos-grid .producto-card,
+  .productos-section:nth-of-type(2) .productos-grid .producto-card,
+  .productos-section:nth-of-type(3) .productos-grid .producto-card {
+    flex: 1 1 calc(45% - 20px);
+    max-width: calc(45% - 20px);
+  }
+}
+
+/* <= 768px */
+@media (max-width: 768px) {
+  .productos-section {
+    padding: 60px 20px;
+  }
+
+  .productos-section h2 {
+    font-size: 30px;
+  }
+
+  .producto-card {
+    height: 260px;
+  }
+
+  .producto-card img {
+    height: 160px;
+  }
+
+  .productos-section .productos-grid .producto-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .btn-catalogo {
+    font-size: 16px;
+    padding: 14px 30px;
+  }
+}
+
+/* <= 480px */
+@media (max-width: 480px) {
+  .productos-section h2 {
+    font-size: 26px;
+  }
+
+  .producto-card {
+    height: auto;
+  }
+
+  .producto-card img {
+    height: 150px;
+  }
+
+  .btn-catalogo {
+    font-size: 15px;
+    padding: 12px 26px;
+  }
+}
