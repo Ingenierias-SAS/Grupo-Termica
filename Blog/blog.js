@@ -209,4 +209,3 @@ document.addEventListener('DOMContentLoaded', () => {
     menuNav.classList.toggle('active');
   });
 });
-
