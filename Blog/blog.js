@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   // ➜ DURANTE DESARROLLO LOCAL: usa el server Flask en localhost:5000
-  const API_BASE = "http://127.0.0.1:5000/api";
+  const API_BASE = "https://grupo-termica-backend.onrender.com/api";
 
   // === Referencias del DOM ===
   const newBlogBtn = document.getElementById("new-blog-btn");
@@ -209,3 +209,4 @@ document.addEventListener('DOMContentLoaded', () => {
     menuNav.classList.toggle('active');
   });
 });
+
