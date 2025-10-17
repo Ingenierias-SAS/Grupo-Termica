@@ -96,6 +96,18 @@ nav ul li a:hover {
   cursor: pointer;
 }
 
+/* ===== ESTADO TRANSPARENTE AL INICIO ===== */
+header.transparent {
+  background: rgba(0, 0, 0, 0); /* totalmente transparente */
+  transition: background 0.6s ease;
+}
+
+/* Añadimos transición general para suavizar el cambio */
+header {
+  transition: background 0.6s ease;
+}
+
+
 /* ===== HERO SECTION ===== */
 .hero {
   width: 100%;
@@ -514,6 +526,12 @@ header {
   transform: scale(1.2);
   opacity: 0.8;
 }
+
+.footer.transparent {
+  background-color: rgba(13, 20, 29, 0.1); /* casi transparente */
+  transition: background-color 0.6s ease;
+}
+
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {

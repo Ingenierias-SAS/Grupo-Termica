@@ -96,6 +96,18 @@ nav ul li a:hover {
   cursor: pointer;
 }
 
+/* ===== ESTADO TRANSPARENTE AL INICIO ===== */
+header.transparent {
+  background: rgba(0, 0, 0, 0); /* totalmente transparente */
+  transition: background 0.6s ease;
+}
+
+/* Añadimos transición general para suavizar el cambio */
+header {
+  transition: background 0.6s ease;
+}
+
+
 /* ===== HERO SECTION ===== */
 .hero {
   width: 100%;
@@ -585,3 +597,715 @@ header {
     height: 26px;
   }
 }
+
+/* ===== BANNER DE SERVICIOS (NUEVO) ===== */
+.banner-servicios {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  background: url("../img/fondo-servicios.png") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.banner-servicios::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+.banner-servicios h2 {
+  position: relative;
+  font-size: 56px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  z-index: 2;
+  color: #fff;
+}
+
+/* ===== SECCIÓN DE TARJETAS ===== */
+.servicios-dinamicos {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  margin-top: -80px; /* 🔹 las sube un poco para mantener el look original */
+  display: flex;
+  justify-content: center;
+}
+
+.servicios-grid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 35px;
+  flex-wrap: nowrap;
+  width: 100%;
+  max-width: 1250px;
+  overflow: visible;
+}
+
+/* ===== CARD ===== */
+.servicio-card {
+  background: #fefcf4;
+  border-radius: 12px;
+  width: 380px;
+  padding: 30px 25px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  min-height: 190px;
+}
+
+.servicio-card:hover {
+  transform: translateY(-6px);
+}
+
+.servicio-card.activo {
+  background: #004C97;
+  color: #fff;
+}
+
+/* ===== TÍTULOS ===== */
+.servicio-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #555;
+}
+
+.servicio-card.activo h3 {
+  color: #fff;
+}
+
+/* ===== SELECT ===== */
+.servicio-card select {
+  width: 90%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.servicio-card.activo select {
+  border: none;
+  color: #004C97;
+}
+
+/* ===== INFO DESPLEGABLE ===== */
+.servicio-info {
+  margin-top: 15px;
+  background: #fff;
+  color: #222;
+  border-radius: 8px;
+  padding: 15px;
+  display: none;
+  text-align: left;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.servicio-info.mostrar {
+  display: block;
+  animation: expandCard 0.3s ease;
+}
+
+@keyframes expandCard {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== BÚNKER GRIS ===== */
+.bunker-gris {
+  width: 100%;
+  height: 250px;
+  background: #e6e7e9;
+  position: relative;
+  z-index: 0;
+}
+
+.bunker-gris::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), transparent);
+}
+
+/* ====== RESPONSIVE ====== */
+
+/* === TABLET (hasta 1024px) === */
+@media (max-width: 1024px) {
+  .banner-servicios {
+    height: 55vh;
+    background-position: center;
+  }
+
+  .banner-servicios h2 {
+    font-size: 42px;
+  }
+
+  .servicios-dinamicos {
+    margin-top: -50px;
+  }
+
+  .servicios-grid {
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+
+  .servicio-card {
+    width: 320px;
+    padding: 25px 20px;
+  }
+}
+
+/* === MÓVILES GRANDES (hasta 768px) === */
+@media (max-width: 768px) {
+  .banner-servicios {
+    height: 45vh;
+  }
+
+  .banner-servicios h2 {
+    font-size: 32px;
+  }
+
+  .servicios-dinamicos {
+    margin-top: 20px; /* 🔹 ya no se superponen */
+  }
+
+  .servicios-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 0 15px;
+  }
+
+  .servicio-card {
+    width: 90%;
+    max-width: 400px;
+    padding: 20px 15px;
+  }
+
+  .servicio-info {
+    font-size: 14px;
+  }
+}
+
+/* === MÓVILES PEQUEÑOS (hasta 480px) === */
+@media (max-width: 480px) {
+  .banner-servicios {
+    height: 40vh;
+  }
+
+  .banner-servicios h2 {
+    font-size: 26px;
+  }
+
+  .servicios-dinamicos {
+    margin-top: 10px;
+  }
+
+  .servicios-grid {
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .servicio-card {
+    width: 100%;
+    max-width: 340px;
+    padding: 18px 14px;
+  }
+
+  .servicio-card h3 {
+    font-size: 16px;
+  }
+
+  .servicio-card select {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .servicio-info {
+    font-size: 13px;
+  }
+
+  .bunker-gris {
+    height: 200px;
+  }
+}
+
+@media (max-width: 400px) {
+  html, body {
+    overflow-x: hidden;
+  }
+}
+
+/* ===== SECCIÓN DETALLE DE SERVICIO ===== */
+.servicio-detalle {
+  width: 100%;
+  padding: 100px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.servicio-contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1100px;
+  width: 100%;
+  gap: 50px;
+  flex-wrap: nowrap;
+}
+
+/* ===== IMAGEN ===== */
+.servicio-imagen img {
+  width: 420px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.servicio-imagen img:hover {
+  transform: scale(1.02);
+}
+
+/* ===== TEXTO ===== */
+.servicio-texto {
+  flex: 1;
+  color: #222;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.servicio-texto h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #002E5D;
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+
+.servicio-texto p {
+  font-size: 17px;
+  line-height: 1.7;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.servicio-texto strong {
+  color: #004C97;
+}
+
+/* ===== BOTÓN ===== */
+.btn-servicio {
+  display: inline-block;
+  text-decoration: none;
+  background: transparent;
+  color: #004C97;
+  border: 2px solid #004C97;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-servicio:hover {
+  background: #004C97;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* 🔹 Tablets horizontales */
+@media (max-width: 992px) {
+  .servicio-contenedor {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .servicio-imagen img {
+    width: 90%;
+    max-width: 420px;
+  }
+
+  .servicio-texto {
+    padding: 0 10px;
+  }
+
+  .servicio-texto h2 {
+    font-size: 24px;
+  }
+
+  .servicio-texto p {
+    font-size: 16px;
+  }
+
+  .btn-servicio {
+    padding: 10px 28px;
+  }
+}
+
+/* 🔹 Móviles */
+@media (max-width: 600px) {
+  .servicio-detalle {
+    padding: 70px 15px;
+  }
+
+  .servicio-texto h2 {
+    font-size: 22px;
+  }
+
+  .servicio-texto p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .servicio-imagen img {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .btn-servicio {
+    font-size: 14px;
+    padding: 9px 24px;
+  }
+}
+
+/* 🔹 Móviles pequeños */
+@media (max-width: 400px) {
+  .servicio-texto h2 {
+    font-size: 20px;
+  }
+
+  .servicio-texto p {
+    font-size: 14px;
+  }
+
+  .btn-servicio {
+    padding: 8px 22px;
+  }
+}
+
+/* ===== SECCIÓN PRINCIPAL ===== */
+.bloque-servicios-empresariales {
+  width: 100%;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e6ebef 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* ===== FRASE EMPRESARIAL ===== */
+.bloque-frase {
+  text-align: center;
+  margin-bottom: 60px;
+  color: #222;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.bloque-frase p {
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1.6;
+}
+
+/* ===== GRID TARJETAS ===== */
+.bloque-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 50px;
+  max-width: 1200px;
+  width: 100%;
+  justify-content: center;
+}
+
+/* ===== TARJETAS ===== */
+.bloque-card {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 18px;
+  padding: 30px 25px 35px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  backdrop-filter: blur(6px);
+  overflow: hidden;
+  border: 1px solid rgba(0, 76, 151, 0.12);
+}
+
+/* Desnivel visual */
+.bloque-card:nth-child(odd) {
+  transform: translateY(25px);
+}
+.bloque-card:nth-child(even) {
+  transform: translateY(-25px);
+}
+
+.bloque-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(0, 76, 151, 0.25);
+}
+
+/* ===== IMÁGENES ===== */
+.bloque-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  border-radius: 14px;
+  margin-bottom: 20px;
+}
+
+/* ===== TÍTULOS ===== */
+.bloque-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 21px;
+  color: #002E5D;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+/* ===== DESCRIPCIÓN ===== */
+.bloque-card p {
+  font-size: 15px;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* ===== BOTÓN ===== */
+.bloque-btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #004C97;
+  border: 2px solid #004C97;
+  padding: 10px 30px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+}
+
+.bloque-btn:hover {
+  background: #004C97;
+  color: #fff;
+  box-shadow: 0 0 12px rgba(0, 76, 151, 0.4);
+  transform: translateY(-3px);
+}
+
+/* ====== RESPONSIVE CENTRADO Y SIMÉTRICO ====== */
+
+/* === TABLET (hasta 1024px) === */
+@media (max-width: 1024px) {
+  .bloque-servicios-empresariales {
+    padding: 60px 30px;
+  }
+
+  .bloque-frase {
+    margin-bottom: 50px;
+  }
+
+  .bloque-frase p {
+    font-size: 17px;
+    letter-spacing: 1.4px;
+  }
+
+  .bloque-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px; /* 🔹 espacio parejo entre tarjetas */
+    justify-content: center;
+    justify-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .bloque-card {
+    width: 90%;
+    padding: 25px 20px;
+  }
+
+  .bloque-card img {
+    height: 200px;
+  }
+
+  .bloque-card h3 {
+    font-size: 19px;
+  }
+
+  .bloque-card p {
+    font-size: 14px;
+  }
+
+  .bloque-card:nth-child(odd),
+  .bloque-card:nth-child(even) {
+    transform: none; /* 🔹 quita el desnivel en pantallas medianas */
+  }
+}
+
+/* === MÓVILES GRANDES (hasta 768px) === */
+@media (max-width: 768px) {
+  .bloque-servicios-empresariales {
+    padding: 50px 25px;
+  }
+
+  .bloque-frase {
+    margin-bottom: 40px;
+  }
+
+  .bloque-frase p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .bloque-grid {
+    grid-template-columns: 1fr; /* 🔹 tarjetas una debajo de otra */
+    gap: 35px; /* 🔹 mismo espacio entre tarjetas */
+    justify-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .bloque-card {
+    width: 100%;
+    max-width: 420px;
+    padding: 25px 20px;
+  }
+
+  .bloque-card img {
+    height: 190px;
+  }
+
+  .bloque-card h3 {
+    font-size: 18px;
+  }
+
+  .bloque-card p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .bloque-btn {
+    font-size: 14px;
+    padding: 9px 25px;
+  }
+}
+
+/* === MÓVILES PEQUEÑOS (hasta 480px) === */
+@media (max-width: 480px) {
+  .bloque-servicios-empresariales {
+    padding: 40px 15px;
+  }
+
+  .bloque-frase p {
+    font-size: 14px;
+    line-height: 1.4;
+    letter-spacing: 1px;
+  }
+
+  .bloque-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    justify-items: center;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .bloque-card {
+    width: 100%;
+    max-width: 360px;
+    padding: 22px 16px;
+    border-radius: 14px;
+  }
+
+  .bloque-card img {
+    height: 180px;
+  }
+
+  .bloque-card h3 {
+    font-size: 16px;
+  }
+
+  .bloque-card p {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  .bloque-btn {
+    font-size: 13px;
+    padding: 8px 20px;
+    border-width: 2px;
+  }
+}
+
+/* === AJUSTE FINAL PARA EVITAR DESBORDE === */
+@media (max-width: 400px) {
+  html, body {
+    overflow-x: hidden;
+  }
+
+  .bloque-grid {
+    width: 100%;
+  }
+
+  .bloque-card {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+
+/* ===== ELIMINAR ESPACIO BLANCO ENTRE ÚLTIMA SECCIÓN Y FOOTER ===== */
+.bloque-servicios-empresariales {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+footer {
+  margin-top: 0 !important;
+}
+
+/* ===== BÚNKER FINAL (SECCIÓN VACÍA AL FINAL DE LA PÁGINA) ===== */
+.bunker-final {
+  width: 100%;
+  height: 180px; /* 🔹 puedes ajustar la altura si quieres más o menos espacio */
+  background: linear-gradient(135deg, #f5f7fa 0%, #e6ebef 100%); /* mismo color que la sección empresarial */
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== AJUSTE DE CAPAS (Z-INDEX) PARA QUE LAS TARJETAS QUEDEN AL FRENTE ===== */
+.bloque-servicios-empresariales {
+  position: relative;
+  z-index: 2; /* 🔹 las tarjetas quedan al frente */
+}
+
+.bunker-final {
+  position: relative;
+  z-index: 1; /* 🔹 el bunker queda detrás */
+  margin-top: -100px; /* 🔹 sube el bunker para quedar detrás visualmente */
+}
+

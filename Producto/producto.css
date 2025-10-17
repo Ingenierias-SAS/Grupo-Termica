@@ -96,6 +96,18 @@ nav ul li a:hover {
   cursor: pointer;
 }
 
+/* ===== ESTADO TRANSPARENTE AL INICIO ===== */
+header.transparent {
+  background: rgba(0, 0, 0, 0); /* totalmente transparente */
+  transition: background 0.6s ease;
+}
+
+/* Añadimos transición general para suavizar el cambio */
+header {
+  transition: background 0.6s ease;
+}
+
+
 /* ===== HERO SECTION ===== */
 .hero {
   width: 100%;
@@ -757,7 +769,7 @@ header {
 /* ===== BOTÓN DESCARGAR CATÁLOGO ===== */
 .catalogo-container {
   width: 100%;
-  background: linear-gradient(90deg, #004C97 0%, #0073d1 100%);
+  background: linear-gradient(90deg, #004C97 0%, #004C97 100%);
   text-align: center;
   padding: 60px 20px;
 }

@@ -96,6 +96,18 @@ nav ul li a:hover {
   cursor: pointer;
 }
 
+/* ===== ESTADO TRANSPARENTE AL INICIO ===== */
+header.transparent {
+  background: rgba(0, 0, 0, 0); /* totalmente transparente */
+  transition: background 0.6s ease;
+}
+
+/* Añadimos transición general para suavizar el cambio */
+header {
+  transition: background 0.6s ease;
+}
+
+
 /* ===== HERO SECTION ===== */
 .hero {
   width: 100%;
