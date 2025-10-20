@@ -1,162 +1,232 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Inicio | Kolbing</title>
-  <link rel="icon" type="image/png" href="img/LogoDorado.png" />
-  <link rel="stylesheet" href="inicio/index.css" />
-  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio | Grupo Térmica</title>
+  <link rel="icon" type="image/png" href="img/Logo.png">
+  <link rel="stylesheet" href="inicio/index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
- <!-- ===== HEADER ===== -->
-<header>
-  <div class="header-container">
-    <div class="logo">
-      <img src="img/logo.png" alt="Logo Kolbing">
-    </div>
-    <nav id="menu-nav">
-      <ul>
-        <li><a href="index.html" class="active">Inicio</a></li>
-        <li><a href="nosotros/nosotros.html">Nosotros</a></li>
-        <li><a href="servicios/servicios.html">Servicios</a></li>
-        <li><a href="contacto/contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-    <a href="https://wa.link/n52345" target="_blank" class="btn-whatsapp">
-      <img src="img/whatsapp.png" alt="WhatsApp">
-      <span>333 243 8346</span>
-    </a>
-    <button id="menu-toggle" aria-label="Abrir menú">&#9776;</button>
-  </div>
-</header>
 
-
-
-  <!-- ===== BARRA REDES ===== -->
-  
+  <!-- ===== BARRA LATERAL DE REDES ===== -->
 <div class="social-bar">
-  <a href="https://wa.link/n52345" class="whatsapp" title="WhatsApp">
-    <img src="img/whatsapp.png" alt="WhatsApp">
+  <a href="https://www.facebook.com/people/Asesoria-Termica/100082814800443/?sk=about&locale=es_LA" target="_blank">
+    <img src="img/facebook.png" alt="Facebook">
   </a>
-  <a href="https://www.instagram.com/kolbingingenieria" class="instagram" title="Instagram">
+  <a href="https://www.linkedin.com/in/eduardogomezmendigaña2020?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+    <img src="img/linkedin.png" alt="LinkedIn">
+  </a>
+  <a href="https://www.instagram.com/asesoriaeduardogomez25/?utm_source=qr&igsh=ZjZtMzh0cTB6Yjk2" target="_blank">
     <img src="img/instagram.png" alt="Instagram">
   </a>
-  <a href="https://www.tiktok.com/@kolbingingenieria?is_from_webapp=1&sender_device=pc" class="tiktok" title="TikTok">
-    <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok">
-  </a>
-  <a href="https://www.facebook.com/people/Kolbing-Ingeniería/pfbid0mrGhPLfBnNSBKA1GWJe4YpKPL3mCHbsx6zUEWoZbuZGhFdHq7of2Bw6Wtnw5wd8hl" class="facebook" title="Facebook">
-    <img src="img/facebook.png" alt="Facebook">
+  <a href="https://w.app/xsh6of" target="_blank">
+    <img src="img/whatsapp.png" alt="WhatsApp">
   </a>
 </div>
 
 
-  <!-- ===== SECCIÓN PRINCIPAL ===== -->
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="logo">
+      <img src="img/Logo.png" alt="Logo Grupo Térmica">
+    </div>
+    <nav id="menu-nav">
+      <ul>
+        <li><a href="#" class="active">INICIO</a></li>
+        <li><a href="Nosotros/nosotros.html">NOSOTROS</a></li>
+        <li><a href="Servicios/servicios.html">SERVICIOS</a></li>
+        <li><a href="Contacto/contacto.html">CONTACTO</a></li>
+        <li><a href="Producto/producto.html">PRODUCTOS</a></li>
+        <li><a href="Blog/blog.html">BLOG</a></li>
+      </ul>
+    </nav>
+
+    <div class="whatsapp-btn">
+      <a href="https://wa.me/573205130615" target="_blank">
+        <img src="img/whatsapp.png" alt="WhatsApp">
+        320 295 5059
+      </a>
+    </div>
+
+    <button id="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+  </header>
+
+  <!-- ===== HERO SECTION ===== -->
   <section class="hero">
-    <img src="img/fondo.png" alt="Fondo Kolbing" class="hero-bg">
+    <div class="overlay"></div>
     <div class="hero-content">
-      <img src="img/logo1.png" alt="Logo Kolbing" class="hero-logo">
-      <h2>Soluciones de calidad para la industria y el hogar</h2>
-      <a href="#" class="btn-cta">¡Contáctenos!</a>
+      <h1>GRUPO TÉRMICA</h1>
+      <p>La salud de tu personal está en tus manos.</p>
+      <a href="Contacto/contacto.html" class="btn-contacto">CONTACTO</a>
     </div>
   </section>
 
-  <!-- ===== QUIÉNES SOMOS ===== -->
-<section class="quienes-somos">
-  <div class="qs-container">
-    <div class="qs-texto">
-      <h2>Quiénes Somos</h2>
-      <p>
-        Somos una empresa con un equipo de talento humano y técnico calificado,
-        con más de 20 años de experiencia en la prestación de servicios locativos,
-        fabricación, mantenimiento y comercialización de bandas transportadoras,
-        cerrajería y sistemas de seguridad.
-      </p>
-      <a href="#" class="btn-saber-mas">Saber más →</a>
-    </div>
-    <div class="qs-imagen">
-      <img src="img/quienes-somos.png" alt="Equipo de trabajo Kolbing">
-    </div>
+  <!-- ===== SECCIÓN SOBRE NOSOTROS ===== -->
+<section class="sobre-nosotros">
+  <div class="texto-nosotros">
+    <h2>Sobre Nosotros</h2>
+    <p>
+      Somos su aliado y apoyo oportuno para la <strong>GESTIÓN DOCUMENTAL</strong>, fomentando la Educación con Asesorías Técnico Administrativas, 
+      evaluando Riesgos Sanitarios al Personal, Instalaciones, Procesos y Medio Ambiente, en pro de asegurar que sus espacios sean saludables, 
+      cumpliendo con sus procesos y requerimientos del Código Sanitario Nacional, exigido por la Secretaría de Salud y Marco Legal Vigente (Ley 9 de 1979).<Br>
+       <br> Garantizar el cumplimiento de la Resolución 2674 de 2013.
+    </p>
+    <a href="Nosotros/nosotros.html" class="btn-vermas">
+      <i class="icono">&#128187;</i> Ver más ...
+    </a>
+  </div>
+
+  <div class="imagen-nosotros">
+    <img src="img/L-04.png" alt="Gestión Sanitaria">
   </div>
 </section>
 
-<!-- ===== BANNER EMPRESARIAL ===== -->
-<section class="banner-empresarial">
-  <div class="banner-overlay"></div>
-  <div class="banner-content">
+<!-- ===== BANNER SANITARIO ===== -->
+<section class="banner-sanitario">
+  <div class="overlay"></div>
+  <div class="banner-texto">
     <h2>
-      “Mantenimiento eléctrico y mecánico en la industria y el hogar, fabricación de transportadores de banda, cerrajería, y servicios locativos para oficinas, hogar y negocios”
+      Nuestro objetivo es apoyarte en la obtención del<br>
+      concepto sanitario favorable para tu empresa.
     </h2>
   </div>
 </section>
 
-<!-- ===== NUESTROS SERVICIOS ===== -->
-<section class="nuestros-servicios">
-  <div class="servicios-container">
-    
-    <!-- ===== VIDEO CON PORTADA ===== -->
-<div class="servicios-video">
-  <div class="video-wrapper">
-    <img src="img/portada-video.png" alt="Portada Video Kolbing" class="video-thumb" id="thumb">
-    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube Play" class="play-btn" id="play-btn">
-  </div>
-</div>
+<!-- ===== SECCIÓN NUESTROS SERVICIOS ===== -->
+<section class="servicios">
+  <h2 class="titulo-seccion">Nuestros Servicios</h2>
+  <p class="subtitulo-seccion">SOLUCIONES SANITARIAS A SU MEDIDA</p>
 
-
-    <!-- ===== TEXTO ===== -->
-    <div class="servicios-texto">
-      <h2>Nuestros Servicios</h2>
+  <div class="servicios-grid">
+    <!-- Servicio 1 -->
+    <div class="servicio">
+      <a href="Servicios/servicios.html">
+        <img src="img/lab.png" alt="Laboratorio Clínico">
+      </a>
+      <h3>Laboratorio Clínico</h3>
       <p>
-        Kolbing ingeniería presta el servicio de mantenimiento eléctrico a la industria y el hogar, 
-        como es el mantenimiento de tableros eléctricos de media y baja tensión. Cableado, instalación 
-        de interruptores, tomas, lámparas, reubicación de puntos eléctricos, puesta a tierra, cortos / breakers, 
-        reparación poste a casa, acometida eléctrica, instalación de duchas eléctricas, iluminación LED 
-        y cableado eléctrico residencial.
+        Exámenes médicos laborales exigidos por la Secretaría de Salud para ingreso, egreso y renovación del personal activo.
       </p>
-      <a href="#" class="btn-saber-mas">Saber más →</a>
     </div>
 
+    <!-- Servicio 2 -->
+    <div class="servicio">
+      <a href="Servicios/servicios.html">
+        <img src="img/alimentos.png" alt="Manipulación de Alimentos">
+      </a>
+      <h3>Manipulación De Alimentos</h3>
+      <p>
+        Nuestros cursos garantizan un aprendizaje seguro que impulsa tu desarrollo personal y profesional.
+      </p>
+    </div>
+
+    <!-- Servicio 3 -->
+    <div class="servicio">
+      <a href="Servicios/servicios.html">
+        <img src="img/plaga.png" alt="Control de Plaga">
+      </a>
+      <h3>Control De Plaga</h3>
+      <p>
+        Contamos con las medidas preventivas necesarias para evitar la proliferación de plagas en tus instalaciones.
+      </p>
+    </div>
+
+    <!-- Servicio 4 -->
+    <div class="servicio">
+      <a href="Servicios/servicios.html">
+        <img src="img/aire.png" alt="Calidad del Aire">
+      </a>
+      <h3>Calidad Del Aire INTERIOR</h3>
+      <p>
+        Crucial para la salud y el bienestar de clientes y
+        empleados, garantizando un aire limpio y seguro,
+        implementando controles para población de
+        palomas, ya que inciden al SINDROME DEL
+        EDIFICIO ENFERMO.
+      </p>
+    </div>
+  </div>
+
+  <!-- 🔹 Botón Ver Todos los Servicios -->
+  <div class="servicios-boton">
+    <a href="Servicios/servicios.html" class="btn-ver-servicios">Ver Todos los Servicios</a>
   </div>
 </section>
 
-<!-- ===== BANNER CONTÁCTANOS ===== -->
+<!-- ===== EMPRESAS ALIADAS ===== -->
+<section class="empresas-aliadas">
+  <h2><span class="azul">Empresas Aliadas</span> 
+
+  <div class="logos-aliados">
+    <img src="img/camara.png" alt="Cámara de Comercio de Bogotá">
+    <img src="img/bogota.png" alt="Alcaldía y Secretaría de Salud">
+    <img src="img/lab.png" alt="Colcan">
+    <img src="img/tca.png" alt="Técnica de Control Ambiental TCA">
+    <img src="img/mundogas.png" alt="Mundo Gas Soluciones">
+    <img src="img/eltriunfo.png" alt="Fumigaciones El Triunfo">
+  </div>
+</section>
+
+<!-- ===== BANNER FINAL DE CONTACTO ===== -->
 <section class="banner-contacto">
-  <div class="banner-content">
-    <a href="contacto.html" class="btn-contacto">CONTÁCTANOS</a>
+  <div class="overlay"></div>
+  <div class="contenido-banner">
+    <a href="Contacto/Contacto.html" class="texto-contacto">CONTÁCTANOS</a>
   </div>
 </section>
 
 
 
-  <!-- ===== FOOTER ===== -->
-  <footer>
-    <div class="footer-info">
-      <div class="footer-column">
-        <h3>DIRECCIÓN</h3>
-        <p>Bogotá - Colombia</p>
-      </div>
-      <div class="footer-column">
-        <h3>ESCRÍBENOS</h3>
-        <p>333 243 8346</p>
-        <p>gerenciakolbing@gmail.com</p>
-      </div>
-      <div class="footer-column">
-        <h3>HORARIO</h3>
-        <p>Lun - Vie: 9am - 8pm</p>
-        <p>Sábado: 8am - 12m</p>
-      </div>
-    </div>
 
-    <div class="footer-social">
-      <a href="https://wa.link/n52345"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></a>
-      <a href="https://www.instagram.com/kolbingingenieria"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
-      <a href="https://www.tiktok.com/@kolbingingenieria?is_from_webapp=1&sender_device=pc"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok"></a>
-      <a href="https://www.facebook.com/people/Kolbing-Ingeniería/pfbid0mrGhPLfBnNSBKA1GWJe4YpKPL3mCHbsx6zUEWoZbuZGhFdHq7of2Bw6Wtnw5wd8hl"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
-    </div>
 
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-item">
+      <h3>DIRECCIÓN</h3>
+      <span class="footer-line"></span>
+      <p>Cra. 39A #33-37, Puente Aranda, Bogotá</p>
+    </div>
+    <div class="footer-item">
+      <h3>ESCRÍBENOS</h3>
+      <span class="footer-line"></span>
+      <p>320 295 5059</p>
+      <p>601 720 9119</p>
+      <p>Grupotermica2023@gmail.com</p>
+    </div>
+    <div class="footer-item">
+      <h3>HORARIO</h3>
+      <span class="footer-line"></span>
+      <p>Lun - Vie: 9am - 8pm</p>
+      <p>Sábado: 8am - 12m</p>
+    </div>
+  </div>
+
+  <div class="footer-middle">
+    <a href="Contacto/contacto.html" class="btn-contactanos">CONTÁCTANOS</a>
+  </div>
+
+  <div class="footer-bottom">
+    <p>SÍGUENOS EN NUESTRAS REDES SOCIALES</p>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/people/Asesoria-Termica/100082814800443/?sk=about&locale=es_LA"><img src="img/facebookA.png" alt="Facebook"></a>
+      <a href="https://www.instagram.com/asesoriaeduardogomez25/?utm_source=qr&igsh=ZjZtMzh0cTB6Yjk2"><img src="img/instagramA.png" alt="Instagram"></a>
+      <a href="https://www.linkedin.com/in/eduardogomezmendigaña2020?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img src="img/linkedinA.png" alt="LinkedIn"></a>
+      <a href="https://w.app/xsh6of"><img src="img/whatsappA.png" alt="WhatsApp"></a>
+    </div>
     <hr>
-    <p class="footer-bottom">KOLBING © 2025 | 333 243 8346 | gerenciakolbing@gmail.com</p>
-  </footer>
-    <script src="inicio/index.js"></script>
+    <p>GRUPO TÉRMICA © 2025</p>
+    <p>320 295 5059 | GRUPOTERMICA2023@GMAIL.COM</p>
+  </div>
+</footer>
+
+
+  <script src="inicio/index.js"></script>
 </body>
 </html>
+
+
