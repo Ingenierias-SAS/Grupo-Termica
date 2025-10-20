@@ -519,436 +519,385 @@ header.header-animate { animation: headerFadeDown 900ms ease both; }
   * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
 }
 
-/* ===== QUIÉNES SOMOS ===== */
-.quienes-somos {
-  width: 100%;
-  min-height: 100vh; /* 🔹 Ahora ocupa toda la pantalla verticalmente */
-  background: #ffffff;
-  color: #18266C;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 140px 20px 100px; /* 🔹 Añadido espacio superior para que se vea bajo el header */
-  box-sizing: border-box;
-}
-
-.qs-container {
-  max-width: 1200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 80px;
-  flex-wrap: wrap;
-}
-
-/* ===== TEXTO ===== */
-.qs-texto {
-  flex: 1;
-  min-width: 320px;
-  text-align: center;
-}
-
-.qs-texto h2 {
-  font-size: 38px;
-  color: #18266C;
-  margin-bottom: 25px;
-  border-bottom: 3px solid #C6A03A;
-  display: inline-block;
-  padding-bottom: 8px;
-  font-weight: 700;
-}
-
-.qs-texto p {
-  font-size: 19px;
-  line-height: 1.8;
-  color: #333;
-  max-width: 700px;
-  margin: 0 auto 45px auto;
-  text-align: center;
-}
-
-/* ===== BOTÓN SABER MÁS ===== */
-.btn-saber-mas {
-  background: #C6A03A;
-  color: #18266C;
-  padding: 14px 40px;
-  border-radius: 35px;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 17px;
-  transition: all 0.3s ease;
-  display: inline-block;
-}
-
-.btn-saber-mas:hover {
-  background: #e0b94d;
-  transform: scale(1.05);
-}
-
-/* ===== IMAGEN ===== */
-.qs-imagen {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.qs-imagen img {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 15px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease;
-}
-
-.qs-imagen img:hover {
-  transform: scale(1.04);
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 992px) {
-  .quienes-somos {
-    padding: 120px 20px 80px;
-  }
-
-  .qs-container {
-    flex-direction: column;
-    text-align: center;
-    gap: 50px;
-  }
-
-  .qs-texto h2 {
-    font-size: 32px;
-  }
-
-  .qs-texto p {
-    max-width: 90%;
-    font-size: 17px;
-    margin: 0 auto 35px;
-  }
-
-  .qs-imagen img {
-    max-width: 350px;
-  }
-}
-
-/* ===== BANNER EMPRESARIAL ===== */
-.banner-empresarial {
-  position: relative;
-  width: 100%;
-  height: 60vh; /* 🔹 Altura moderada */
-  background: url("../img/banner-bg.png") center center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
-}
-
-/* 🔹 Capa oscura encima de la imagen para mejor contraste */
-.banner-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(24, 38, 108, 0.75); /* Azul corporativo con opacidad */
-  z-index: 1;
-}
-
-/* 🔹 Contenido */
-.banner-content {
-  position: relative;
-  z-index: 2;
-  max-width: 1100px;
-  padding: 0 20px;
-}
-
-.banner-content h2 {
-  font-size: 26px;
-  font-weight: 600;
-  line-height: 1.7;
-  color: #fff;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  border-left: 5px solid #C6A03A; /* Toque mostaza corporativo */
-  padding-left: 20px;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 992px) {
-  .banner-empresarial {
-    height: 50vh;
-  }
-
-  .banner-content h2 {
-    font-size: 20px;
-    line-height: 1.6;
-    padding-left: 15px;
-  }
-}
-
-@media (max-width: 576px) {
-  .banner-empresarial {
-    height: auto;
-    padding: 80px 0;
-  }
-
-  .banner-content h2 {
-    font-size: 18px;
-    line-height: 1.5;
-    padding-left: 0;
-    border-left: none;
-  }
-}
-
-/* ===== NUESTROS SERVICIOS ===== */
-.nuestros-servicios {
-  width: 100%;
-  min-height: 100vh;
-  background: #ffffff;
-  color: #18266C;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 140px 20px 100px;
-  box-sizing: border-box;
-}
-
-.servicios-container {
-  max-width: 1200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 80px;
-  flex-wrap: wrap;
-}
-
-/* ===== VIDEO CON PORTADA ===== */
-.servicios-video {
-  flex: 1;
-  min-width: 320px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.video-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 700px;
-  aspect-ratio: 16/9;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
-}
-
-/* Portada */
-.video-thumb {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.4s ease;
-}
-
-.video-wrapper:hover .video-thumb {
-  transform: scale(1.05);
-}
-
-/* ===== BOTÓN YOUTUBE SIN CÍRCULO ===== */
-.play-btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100px; /* 🔹 Tamaño visible */
-  height: auto;
-  cursor: pointer;
-  transition: transform 0.3s ease, filter 0.3s ease;
-  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4)); /* 🔹 Sombra sutil */
-}
-
-.play-btn:hover {
-  transform: translate(-50%, -50%) scale(1.08);
-  filter: brightness(1.2) drop-shadow(0 6px 14px rgba(0,0,0,0.5));
-}
-
-/* Iframe cuando se reproduce */
-.video-wrapper iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-radius: 20px;
-}
-
-/* ===== TEXTO ===== */
-.servicios-texto {
-  flex: 1;
-  min-width: 320px;
-  text-align: center;
-}
-
-.servicios-texto h2 {
-  font-size: 38px;
-  color: #18266C;
-  margin-bottom: 25px;
-  border-bottom: 3px solid #C6A03A;
-  display: inline-block;
-  padding-bottom: 8px;
-  font-weight: 700;
-}
-
-.servicios-texto p {
-  font-size: 19px;
-  line-height: 1.8;
-  color: #333;
-  max-width: 700px;
-  margin: 0 auto 45px auto;
-  text-align: center;
-}
-
-/* ===== BOTÓN ===== */
-.servicios-texto .btn-saber-mas {
-  background: #C6A03A;
-  color: #18266C;
-  padding: 14px 40px;
-  border-radius: 35px;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 17px;
-  transition: all 0.3s ease;
-  display: inline-block;
-}
-
-.servicios-texto .btn-saber-mas:hover {
-  background: #e0b94d;
-  transform: scale(1.05);
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 992px) {
-  .nuestros-servicios {
-    padding: 120px 20px 80px;
-  }
-
-  .servicios-container {
-    flex-direction: column-reverse;
-    text-align: center;
-    gap: 50px;
-  }
-
-  .video-wrapper {
-    max-width: 500px;
-  }
-
-  .play-btn {
-    width: 80px;
-  }
-
-  .servicios-texto h2 {
-    font-size: 32px;
-  }
-
-  .servicios-texto p {
-    font-size: 17px;
-    max-width: 90%;
-    margin: 0 auto 35px;
-  }
-}
-
-@media (max-width: 576px) {
-  .video-wrapper {
-    max-width: 350px;
-  }
-
-  .play-btn {
-    width: 65px;
-  }
-
-  .servicios-texto h2 {
-    font-size: 28px;
-  }
-
-  .servicios-texto p {
-    font-size: 16px;
-  }
-}
-
-/* ===== BANNER CONTÁCTANOS ===== */
-.banner-contacto {
+/* ===== BANNER FILOSOFÍA ===== */
+.banner-filosofia {
   position: relative;
   width: 100%;
   height: 60vh;
-  background: url('../img/banner-contacto.png') center/cover no-repeat; /* 🔹 Cambia por tu imagen */
+  background: url('../img/banner-filosofia.png') center/cover no-repeat;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   overflow: hidden;
 }
 
-.banner-contacto::before {
+.banner-filosofia::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6); /* 🔹 Oscurece la imagen */
-  z-index: 1;
+  background: rgba(0, 0, 0, 0.6);
 }
 
-.banner-content {
+.banner-filosofia h1 {
   position: relative;
-  z-index: 2;
-  text-align: center;
-}
-
-/* ===== BOTÓN DE TEXTO ===== */
-.btn-contacto {
-  font-family: 'Montserrat', sans-serif;
+  color: #fff;
   font-size: 60px;
   font-weight: 800;
-  color: #dbe6ff;
-  text-decoration: none;
-  position: relative;
-  display: inline-block;
-  transition: all 0.4s ease;
+  letter-spacing: 2px;
+  border-bottom: 4px solid #C6A03A;
+  padding-bottom: 10px;
+  z-index: 2;
 }
 
-/* Línea inferior */
-.btn-contacto::after {
-  content: "";
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  width: 0;
-  height: 3px;
-  background: #2b5ee6;
-  transition: all 0.4s ease;
-  transform: translateX(-50%);
-}
-
-/* ===== EFECTO HOVER ===== */
-.btn-contacto:hover {
-  color: #ffffff;
-  text-shadow: 0 0 20px #4a8cff, 0 0 40px #2b5ee6;
-  transform: scale(1.05);
-}
-
-.btn-contacto:hover::after {
+/* ===== ESTRUCTURA PRINCIPAL ===== */
+.nosotros {
+  font-family: 'Montserrat', sans-serif;
   width: 100%;
 }
 
-/* ===== RESPONSIVE ===== */
+.bloque-nosotros {
+  padding: 100px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fondo-blanco {
+  background: #ffffff;
+}
+
+.fondo-gris {
+  background: #f5f5f5;
+}
+
+.bloque-contenido {
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.bloque-contenido.invertido {
+  flex-direction: row-reverse;
+}
+
+/* ===== BLOQUE TEXTO ===== */
+.bloque-texto {
+  flex: 1;
+  min-width: 320px;
+  color: #18266C;
+}
+
+.bloque-texto h2 {
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  position: relative;
+  display: inline-block;
+}
+
+.bloque-texto h2::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 60%;
+  height: 3px;
+  background: #C6A03A;
+}
+
+.bloque-texto p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333;
+  text-align: justify;
+}
+
+.bloque-texto ul {
+  list-style: none;
+  padding: 0;
+}
+
+.bloque-texto ul li {
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+
+.bloque-texto ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #C6A03A;
+  font-weight: bold;
+}
+
+/* ===== BLOQUE IMAGEN ===== */
+.bloque-imagen {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bloque-imagen img {
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 4 / 3;          /* Mantiene proporción uniforme */
+  height: auto;
+  object-fit: contain;          /* Evita recortes y deformaciones */
+  border-radius: 15px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.bloque-imagen img:hover {
+  transform: scale(1.03);
+}
+
+/* ===== ESTÁNDARES DE CALIDAD ===== */
+.bloque-contenido-columna {
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.bloque-contenido-columna h2 {
+  font-size: 38px;
+  color: #18266C;
+  margin-bottom: 30px;
+  border-bottom: 3px solid #C6A03A;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+.bloque-contenido-columna img {
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 4 / 3;          /* Igual proporción para uniformidad visual */
+  height: auto;
+  object-fit: contain;
+  border-radius: 15px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.bloque-contenido-columna img:hover {
+  transform: scale(1.03);
+}
+
+/* Larger diagram for ESTÁNDARES DE CALIDAD */
+.estandares .bloque-contenido-columna {
+  max-width: 1200px;
+}
+
+.estandares .bloque-contenido-columna img {
+  max-width: 1100px;
+  aspect-ratio: auto; /* use natural image ratio */
+}
+
+/* ===========================
+   RESPONSIVE — SECCIÓN FILOSOFÍA
+=========================== */
+
+/* ===== TABLETS GRANDES (max 1200px) ===== */
+@media (max-width: 1200px) {
+  .bloque-contenido {
+    gap: 40px;
+  }
+
+  .bloque-texto h2 {
+    font-size: 34px;
+  }
+
+  .bloque-texto p {
+    font-size: 17px;
+  }
+
+  .bloque-imagen img {
+    max-width: 460px;
+  }
+}
+
+/* ===== TABLETS (max 992px) ===== */
 @media (max-width: 992px) {
-  .btn-contacto {
+  .banner-filosofia {
+    height: 50vh;
+    background-position: center;
+  }
+
+  .banner-filosofia h1 {
     font-size: 42px;
   }
+
+  .bloque-nosotros {
+    padding: 80px 20px;
+  }
+
+  .bloque-contenido {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 35px;
+  }
+
+  .bloque-texto {
+    width: 90%;
+  }
+
+  .bloque-texto h2 {
+    font-size: 30px;
+  }
+
+  .bloque-texto p {
+    font-size: 17px;
+  }
+
+  .bloque-imagen img {
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    aspect-ratio: auto;
+    object-fit: contain;
+  }
+
+  /* Imagen grande de estándares */
+  .bloque-contenido-columna img {
+    width: 90%;
+    max-width: 750px;
+    aspect-ratio: auto;
+  }
+
+  /* 🔹 En responsive: MISIÓN y OBJETIVOS → imagen debajo del texto */
+  .fondo-gris .bloque-contenido.invertido,
+  .fondo-blanco .bloque-contenido.invertido {
+    flex-direction: column-reverse;
+  }
 }
 
-@media (max-width: 576px) {
-  .banner-contacto {
+/* ===== MÓVILES GRANDES (max 768px) ===== */
+@media (max-width: 768px) {
+  .banner-filosofia {
     height: 45vh;
   }
-  .btn-contacto {
-    font-size: 32px;
+
+  .banner-filosofia h1 {
+    font-size: 34px;
+    border-bottom-width: 3px;
+  }
+
+  .bloque-nosotros {
+    padding: 70px 15px;
+  }
+
+  .bloque-texto h2 {
+    font-size: 26px;
+  }
+
+  .bloque-texto p {
+    font-size: 16px;
+    text-align: justify;
+  }
+
+  .bloque-texto ul li {
+    font-size: 16px;
+  }
+
+  .bloque-imagen img,
+  .bloque-contenido-columna img {
+    width: 95%;
+    max-width: 420px;
+    border-radius: 12px;
+    aspect-ratio: auto;
+  }
+
+  /* 🔹 MISIÓN y OBJETIVOS mantienen imagen abajo */
+  .fondo-gris .bloque-contenido.invertido,
+  .fondo-blanco .bloque-contenido.invertido {
+    flex-direction: column-reverse;
   }
 }
 
+/* ===== MÓVILES PEQUEÑOS (max 576px) ===== */
+@media (max-width: 576px) {
+  .banner-filosofia {
+    height: 40vh;
+    background-position: center;
+  }
+
+  .banner-filosofia h1 {
+    font-size: 26px;
+    letter-spacing: 1px;
+    border-bottom-width: 2px;
+  }
+
+  .bloque-nosotros {
+    padding: 60px 10px;
+  }
+
+  .bloque-texto h2 {
+    font-size: 22px;
+  }
+
+  .bloque-texto p {
+    font-size: 15px;
+  }
+
+  .bloque-texto ul li {
+    font-size: 15px;
+  }
+
+  .bloque-imagen img,
+  .bloque-contenido-columna img {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    border-radius: 10px;
+    aspect-ratio: auto;
+  }
+
+  /* 🔹 MISIÓN y OBJETIVOS mantienen imagen abajo */
+  .fondo-gris .bloque-contenido.invertido,
+  .fondo-blanco .bloque-contenido.invertido {
+    flex-direction: column-reverse;
+  }
+
+  .bloque-contenido {
+    gap: 25px;
+  }
+}
+
+/* ===== MÓVILES EXTRA PEQUEÑOS (max 420px) ===== */
+@media (max-width: 420px) {
+  .banner-filosofia h1 {
+    font-size: 22px;
+  }
+
+  .bloque-texto h2 {
+    font-size: 20px;
+  }
+
+  .bloque-texto p {
+    font-size: 14px;
+  }
+
+  .bloque-texto ul li {
+    font-size: 14px;
+  }
+
+  .bloque-imagen img,
+  .bloque-contenido-columna img {
+    max-width: 320px;
+  }
+
+  /* 🔹 MISIÓN y OBJETIVOS mantienen imagen abajo */
+  .fondo-gris .bloque-contenido.invertido,
+  .fondo-blanco .bloque-contenido.invertido {
+    flex-direction: column-reverse;
+  }
+}
