@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | Grupo Térmica</title>
+  <link rel="icon" type="image/png" href="../img/Logo.png">
+  <link rel="stylesheet" href="contacto.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ===== BARRA LATERAL DE REDES ===== -->
+<div class="social-bar">
+  <a href="https://www.facebook.com/people/Asesoria-Termica/100082814800443/?sk=about&locale=es_LA" target="_blank">
+    <img src="../img/facebook.png" alt="Facebook">
+  </a>
+  <a href="https://www.linkedin.com/in/eduardogomezmendigaña2020?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+    <img src="../img/linkedin.png" alt="LinkedIn">
+  </a>
+  <a href="https://www.instagram.com/asesoriaeduardogomez25/?utm_source=qr&igsh=ZjZtMzh0cTB6Yjk2" target="_blank">
+    <img src="../img/instagram.png" alt="Instagram">
+  </a>
+  <a href="https://w.app/xsh6of" target="_blank">
+    <img src="../img/whatsapp.png" alt="WhatsApp">
+  </a>
+</div>
+
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="logo">
+      <img src="../img/Logo.png" alt="Logo Grupo Térmica">
+    </div>
+    <nav id="menu-nav">
+      <ul>
+        <li><a href="../index.html" class="active">INICIO</a></li>
+        <li><a href="../Nosotros/nosotros.html">NOSOTROS</a></li>
+        <li><a href="../Servicios/servicios.html">SERVICIOS</a></li>
+        <li><a href="../Contacto/contacto.html">CONTACTO</a></li>
+        <li><a href="../Producto/producto.html">PRODUCTOS</a></li>
+        <li><a href="../Blog/blog.html">BLOG</a></li>
+      </ul>
+    </nav>
+
+    <div class="whatsapp-btn">
+      <a href="https://wa.me/573205130615" target="_blank">
+        <img src="../img/whatsapp.png" alt="WhatsApp">
+        320 295 5059
+      </a>
+    </div>
+
+    <button id="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+  </header>
+
+  <!-- ===== BANNER CONTACTO ===== -->
+<section class="banner-contacto">
+  <div class="banner-contenido">
+    <h2>Contacto</h2>
+    <button class="btn-agendar">Agenda Tu Cita</button>
+  </div>
+</section>
+
+<!-- ===== SECCIÓN MAPA Y CONTACTO ===== -->
+<section class="contacto-section">
+
+  <!-- MAPA -->
+  <div class="mapa-container">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.986881965043!2d-74.12429728870666!3d4.596372342532355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f992d0e0c448b%3A0x8979deae60a3d2cb!2zQ3JhLiAzOUEgIyAzMy0zNywgUHVlbnRlIEFyYW5kYSwgQm9nb3TDoSwgRC5DLiwgQm9nb3TDoSwgQm9nb3TDoSwgRC5DLg!5e0!3m2!1ses-419!2sco!4v1760494081232!5m2!1ses-419!2sco"
+      width="100%"
+      height="400"
+      style="border:0; border-radius: 20px;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+
+  <!-- INFORMACIÓN DE CONTACTO -->
+  <div class="info-contacto">
+    <h2>CONTÁCTANOS</h2>
+    <p>Estamos listos para atender tus solicitudes y ofrecerte soluciones sanitarias personalizadas.</p>
+
+    <div class="contacto-cards">
+      <div class="card-contacto">
+        <img src="../img/correoA.png" alt="E-mail">
+        <div>
+          <h3>E-mail</h3>
+          <p>infogrupotermica2025@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="card-contacto">
+        <img src="../img/whatsappA.png" alt="WhatsApp">
+        <div>
+          <h3>WhatsApp</h3>
+          <p>320 513 0615</p>
+        </div>
+      </div>
+
+      <div class="card-contacto">
+        <img src="../img/telefonoA.png" alt="PBX">
+        <div>
+          <h3>PBX</h3>
+          <p>(601) 720 9119</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FORMULARIO AGENDA TU CITA ===== -->
+  <section class="agenda-section" id="formulario-cita">
+    <h1><span style="color:#004C97;"></span> <span style="color:#5c5555;">AGENDA TU CITA</span></h1>
+
+    <form id="form-cita"
+      action="https://docs.google.com/forms/d/e/1FAIpQLSepTVnpXmmg0SQOzkIhjzdjfzOG1B6x_EmbMGXZXYt1bXnMHw/formResponse"
+      method="POST"
+      target="hidden_iframe"
+      onsubmit="enviarFormulario(event)">
+      
+      <label>Nombre completo *</label>
+      <input type="text" name="entry.1445314431" required>
+
+      <label>Teléfono *</label>
+      <input type="tel" name="entry.2068947764" required placeholder="Ej: 321 1234567">
+
+      <label>Correo electrónico *</label>
+      <input type="email" name="entry.1282636307" required>
+
+      <label>Servicio *</label>
+      <select name="entry.1153562001" required>
+        <option value="Manipulación de Alimentos">Manipulación de Alimentos</option>
+        <option value="Control de Plagas">Control de Plagas</option>
+        <option value="Calidad del Aire">Calidad del Aire</option>
+        <option value="Gestión Sanitaria">Gestión Sanitaria</option>
+      </select>
+
+      <label>Mensaje *</label>
+      <textarea name="entry.2112468871" rows="4" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+    <div id="toast" class="toast">✅ Tu cita fue registrada exitosamente.</div>
+  </section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-item">
+      <h3>DIRECCIÓN</h3>
+      <span class="footer-line"></span>
+      <p>Cra. 39A #33-37, Puente Aranda, Bogotá</p>
+    </div>
+    <div class="footer-item">
+      <h3>ESCRÍBENOS</h3>
+      <span class="footer-line"></span>
+      <p>320 295 5059</p>
+      <p>601 720 9119</p>
+      <p>Grupotermica2023@gmail.com</p>
+    </div>
+    <div class="footer-item">
+      <h3>HORARIO</h3>
+      <span class="footer-line"></span>
+      <p>Lun - Vie: 9am - 8pm</p>
+      <p>Sábado: 8am - 12m</p>
+    </div>
+  </div>
+
+  <div class="footer-middle">
+    <a href="Contacto/contacto.html" class="btn-contactanos">CONTÁCTANOS</a>
+  </div>
+
+  <div class="footer-bottom">
+    <p>SÍGUENOS EN NUESTRAS REDES SOCIALES</p>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/people/Asesoria-Termica/100082814800443/?sk=about&locale=es_LA"><img src="../img/facebookA.png" alt="Facebook"></a>
+      <a href="https://www.instagram.com/asesoriaeduardogomez25/?utm_source=qr&igsh=ZjZtMzh0cTB6Yjk2"><img src="../img/instagramA.png" alt="Instagram"></a>
+      <a href="https://www.linkedin.com/in/eduardogomezmendigaña2020?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img src="../img/linkedinA.png" alt="LinkedIn"></a>
+      <a href="https://w.app/xsh6of"><img src="../img/whatsappA.png" alt="WhatsApp"></a>
+    </div>
+    <hr>
+    <p>GRUPO TÉRMICA © 2025</p>
+    <p>320 295 5059 | GRUPOTERMICA2023@GMAIL.COM</p>
+  </div>
+</footer>
+
+
+  <script src="contacto.js"></script>
+</body>
+</html>
