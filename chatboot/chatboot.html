@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quimex | Prototipo de chat Grupo Termica</title>
+  <link rel="icon" type="image/png" href="../img/Logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="chatboot.css">
+  <script defer src="chatboot.js" data-logo="../img/Logo.png"></script>
+</head>
+<body class="quimex-demo">
+  <header class="quimex-demo__hero">
+    <div class="hero__content">
+      <p class="hero__eyebrow">Asesoria sanitaria integral</p>
+      <h1>Conecta con <span>Quimex</span></h1>
+      <p class="hero__lead">
+        Este prototipo mantiene el caracter de Grupo Termica y agrega un estilo propio:
+        trazos geometricos, brillos neon y un chat siempre disponible sin IA.
+      </p>
+      <div class="hero__badges">
+        <span>Logo visible</span>
+        <span>Historial persistente</span>
+        <span>Listo para IA</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="quimex-demo__grid">
+    <section>
+      <h2>Personalidad del asistente</h2>
+      <p>
+        Quimex habla con tono profesional y directo. Hemos preparado respuestas guiadas para que el equipo
+        capture datos clave mientras decides que motor de IA usar mas adelante.
+      </p>
+      <ul>
+        <li>Mensajes de bienvenida y recordatorio de canales humanos.</li>
+        <li>Sugerencias rapidas para temas frecuentes.</li>
+        <li>Respuestas automaticas con datos de contacto.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Diseno adaptable</h2>
+      <p>
+        El boton flotante usa un degradado azul-verde con brillo sutil,
+        inspirado en la paleta del sitio pero con detalles de neon para diferenciarlo.
+        El chat se fija en la esquina inferior y se mantiene en todas las secciones.
+      </p>
+      <p>
+        En moviles, el contenedor ocupa casi todo el ancho para asegurar legibilidad y acciones tactiles comodas.
+      </p>
+    </section>
+
+    <section>
+      <h2>Como integrarlo</h2>
+      <p>1. Enlaza la hoja de estilos en el <code>&lt;head&gt;</code> de cada pagina:</p>
+      <pre><code>&lt;link rel="stylesheet" href="chatboot/chatboot.css"&gt;</code></pre>
+      <p>2. Antes de cerrar el <code>&lt;/body&gt;</code>, carga el script:</p>
+      <pre><code>&lt;script src="chatboot/chatboot.js" data-logo="img/Logo.png" defer&gt;&lt;/script&gt;</code></pre>
+      <p>
+        El atributo <code>data-logo</code> te permite ajustar la ruta cuando estes dentro de carpetas (por ejemplo, <code>../img/Logo.png</code>).
+      </p>
+    </section>
+  </main>
+
+  <section class="quimex-demo__showcase">
+    <article>
+      <h3>Visible en cada seccion</h3>
+      <p>
+        El widget guarda el historial y si el usuario lo dejo abierto en otra seccion, lo veras abierto al regresar.
+      </p>
+    </article>
+    <article>
+      <h3>Modo prototipo</h3>
+      <p>
+        El flujo actual simula respuestas humanas, ideal para validar copywriting y logica antes de conectar la IA.
+      </p>
+    </article>
+    <article>
+      <h3>Acciones rapidas</h3>
+      <p>
+        Chips configurables invitan a agendar visitas, solicitar un diagnostico o resolver dudas regulatorias.
+      </p>
+    </article>
+  </section>
+
+  <section class="quimex-demo__strip">
+    <p>Desplazate para sentir como Quimex permanece siempre a la vista.</p>
+  </section>
+
+  <footer class="quimex-demo__footer">
+    <p>Grupo Termica - Prototipo Quimex</p>
+    <small>Listo para conectar con tu motor de IA preferido.</small>
+  </footer>
+</body>
+</html>

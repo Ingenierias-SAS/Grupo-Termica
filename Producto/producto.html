@@ -6,6 +6,7 @@
   <title>Productos | Grupo Térmica</title>
   <link rel="icon" type="image/png" href="../img/Logo.png">
   <link rel="stylesheet" href="producto.css">
+  <link rel="stylesheet" href="../chatboot/chatboot.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
@@ -45,12 +46,14 @@
       </ul>
     </nav>
 
-    <div class="whatsapp-btn">
-      <a href="https://wa.me/573205130615" target="_blank">
-        <img src="../img/whatsapp.png" alt="WhatsApp">
-        320 295 5059
-      </a>
-    </div>
+    <a class="whatsapp-btn"
+       href="https://wa.me/573205130615"
+       target="_blank"
+       title="Escríbenos por WhatsApp al 320 295 5059"
+       aria-label="Escríbenos por WhatsApp al 320 295 5059">
+      <img src="../img/whatsapp.png" alt="WhatsApp" aria-hidden="true">
+      <span class="whatsapp-btn__number">320 295 5059</span>
+    </a>
 
     <button id="menu-toggle" aria-label="Abrir menú">&#9776;</button>
   </header>
@@ -196,5 +199,6 @@
 
 
   <script src="producto.js"></script>
+  <script defer src="../chatboot/chatboot.js" data-logo="../img/Logo.png"></script>
 </body>
 </html>

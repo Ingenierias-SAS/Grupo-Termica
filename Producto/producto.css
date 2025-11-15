@@ -57,14 +57,9 @@ nav ul li a:hover {
 
 /* ===== BOTÓN WHATSAPP HEADER ===== */
 .whatsapp-btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-}
-
-.whatsapp-btn a {
-  display: flex;
-  align-items: center;
   gap: 8px;
   background: transparent;
   color: white;
@@ -74,9 +69,10 @@ nav ul li a:hover {
   text-decoration: none;
   transition: 0.3s;
   font-weight: 600;
+  cursor: pointer;
 }
 
-.whatsapp-btn a:hover {
+.whatsapp-btn:hover {
   background: #25D366;
   border-color: #25D366;
 }
@@ -84,6 +80,10 @@ nav ul li a:hover {
 .whatsapp-btn img {
   width: 20px;
   height: 20px;
+}
+
+.whatsapp-btn__number {
+  white-space: nowrap;
 }
 
 /* ===== MENÚ HAMBURGUESA (oculto en PC) ===== */
@@ -217,7 +217,7 @@ header {
 /* ===== BARRA LATERAL REDES SOCIALES (PC A LA DERECHA / MÓVIL CENTRADA) ===== */
 .social-bar {
   position: fixed;
-  bottom: 30px;
+  bottom: 120px;
   right: 25px;
   background-color: #004C97;
   display: flex;

@@ -1,0 +1,496 @@
+﻿:root {
+  --quimex-primary: #0ef3a5;
+  --quimex-primary-strong: #0bc48a;
+  --quimex-secondary: #00c1ff;
+  --quimex-dark: #02111f;
+  --quimex-midnight: #031b2c;
+  --quimex-surface: rgba(3, 27, 44, 0.95);
+  --quimex-border: rgba(255, 255, 255, 0.08);
+  --quimex-shadow: 0 25px 60px rgba(3, 17, 31, 0.55);
+  --quimex-radius: 20px;
+  --quimex-font: 'Montserrat', 'Poppins', sans-serif;
+  --quimex-soft: #f5f9ff;
+  --quimex-highlight: #ffd966;
+}
+
+/* ---------- Widget base ---------- */
+.quimex-chat {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 5000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+  font-family: var(--quimex-font);
+  pointer-events: none;
+}
+
+.quimex-chat.is-open {
+  pointer-events: auto;
+}
+
+.quimex-chat * {
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.quimex-chat-widget {
+  width: 340px;
+  max-width: calc(100vw - 40px);
+  background: var(--quimex-surface);
+  border-radius: var(--quimex-radius);
+  border: 1px solid var(--quimex-border);
+  box-shadow: var(--quimex-shadow);
+  backdrop-filter: blur(12px);
+  color: #f4faff;
+  overflow: hidden;
+  transform: translateY(12px) scale(0.98);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.quimex-chat.is-open .quimex-chat-widget {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.quimex-chat__header {
+  background: linear-gradient(125deg, rgba(0, 22, 33, 0.95), rgba(0, 53, 73, 0.8));
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.quimex-chat__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.quimex-chat__logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.quimex-chat__logo img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+.quimex-chat__title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.quimex-chat__subtitle {
+  margin: 0;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.quimex-chat__close {
+  border: none;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transition: background 0.2s ease;
+}
+
+.quimex-chat__close span {
+  display: block;
+  width: 14px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 999px;
+}
+
+.quimex-chat__close span + span {
+  transform: rotate(90deg);
+  margin-top: -2px;
+}
+
+.quimex-chat__close:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.quimex-chat__body {
+  padding: 18px 18px 0;
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+
+.quimex-chat__messages {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 260px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.quimex-chat__messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.quimex-chat__messages::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+}
+
+.quimex-message {
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  max-width: 92%;
+  position: relative;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.quimex-message time {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.7rem;
+  opacity: 0.6;
+}
+
+.quimex-message--bot {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom-left-radius: 4px;
+}
+
+.quimex-message--bot::before {
+  content: 'Q';
+  font-weight: 600;
+  font-size: 0.75rem;
+  position: absolute;
+  top: -18px;
+  left: 6px;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--quimex-primary);
+  padding: 2px 6px;
+  border-radius: 999px;
+}
+
+.quimex-message--user {
+  background: linear-gradient(130deg, var(--quimex-primary), var(--quimex-secondary));
+  margin-left: auto;
+  color: #041320;
+  border-bottom-right-radius: 4px;
+}
+
+.quimex-chat__form {
+  margin-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 14px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.quimex-chat__form textarea {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  color: #f4faff;
+  padding: 10px 12px;
+  resize: none;
+  min-height: 60px;
+}
+
+.quimex-chat__form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.quimex-chat__form button {
+  background: linear-gradient(120deg, var(--quimex-primary), var(--quimex-secondary));
+  border: none;
+  border-radius: 12px;
+  color: #01121f;
+  font-weight: 600;
+  padding: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.quimex-chat__form button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------- Launcher ---------- */
+.quimex-chat-launcher {
+  width: 240px;
+  background: linear-gradient(120deg, rgba(0, 44, 60, 0.95), rgba(0, 22, 36, 0.9));
+  border-radius: 999px;
+  padding: 12px 18px;
+  color: #e8fbff;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--quimex-shadow);
+  pointer-events: auto;
+}
+
+.quimex-chat-launcher .launcher__pulse {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 10% 20%, rgba(14, 243, 165, 0.35), transparent 60%);
+  animation: quimex-pulse 3s infinite;
+}
+
+.quimex-chat-launcher .launcher__icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  display: grid;
+  place-items: center;
+  font-size: 1.2rem;
+  z-index: 2;
+}
+
+.quimex-chat-launcher .launcher__text {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85rem;
+  line-height: 1.2;
+}
+
+.quimex-chat-launcher strong {
+  font-size: 0.95rem;
+}
+
+/* ---------- Quick replies ---------- */
+.quimex-quick-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.quimex-quick {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #f4faff;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.quimex-quick:hover {
+  background: rgba(14, 243, 165, 0.16);
+  border-color: rgba(14, 243, 165, 0.6);
+}
+
+/* ---------- Typing indicator ---------- */
+.quimex-typing {
+  display: none;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 0 14px;
+}
+
+.quimex-typing span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  animation: quimex-bounce 1s infinite ease-in-out;
+}
+
+.quimex-typing span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.quimex-typing span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.quimex-typing.is-visible {
+  display: inline-flex;
+}
+
+/* ---------- Demo page styles ---------- */
+body.quimex-demo {
+  margin: 0;
+  font-family: var(--quimex-font);
+  background: radial-gradient(circle at 20% 20%, #072033, #01070d);
+  color: #dbe9ff;
+  min-height: 100vh;
+}
+
+.quimex-demo__hero {
+  padding: 80px 8vw 60px;
+  background: linear-gradient(135deg, rgba(0, 27, 45, 0.9), rgba(0, 59, 89, 0.9));
+}
+
+.hero__content {
+  max-width: 720px;
+}
+
+.hero__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.8rem;
+  color: var(--quimex-secondary);
+}
+
+.hero__lead {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.hero__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.hero__badges span {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+.quimex-demo__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  padding: 50px 8vw;
+}
+
+.quimex-demo__grid section {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 18px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.quimex-demo__grid h2 {
+  margin-top: 0;
+}
+
+.quimex-demo__grid pre {
+  background: rgba(0, 0, 0, 0.35);
+  padding: 14px;
+  border-radius: 12px;
+  overflow-x: auto;
+}
+
+.quimex-demo__grid code {
+  font-family: 'Courier New', Courier, monospace;
+  color: var(--quimex-highlight);
+}
+
+.quimex-demo__showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+  padding: 0 8vw 40px;
+}
+
+.quimex-demo__showcase article {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.quimex-demo__strip {
+  padding: 40px 8vw;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.quimex-demo__footer {
+  padding: 30px 8vw 80px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ---------- Utilities ---------- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@keyframes quimex-pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+@keyframes quimex-bounce {
+  0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
+  40% { transform: translateY(-4px); opacity: 1; }
+}
+
+@media (max-width: 640px) {
+  .quimex-chat {
+    bottom: 82px;
+    right: 16px;
+    left: 16px;
+    width: auto;
+  }
+
+  .quimex-chat-widget {
+    width: 100%;
+    min-height: 45vh;
+    max-height: calc(100vh - 180px);
+  }
+
+  .quimex-chat-launcher {
+    width: 100%;
+  }
+
+  .quimex-chat__messages {
+    max-height: calc(100vh - 390px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
