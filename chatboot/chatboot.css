@@ -39,6 +39,7 @@
 .quimex-chat-widget {
   width: 340px;
   max-width: calc(100vw - 40px);
+  max-height: calc(100vh - 48px);
   background: var(--quimex-surface);
   border-radius: var(--quimex-radius);
   border: 1px solid var(--quimex-border);
@@ -46,6 +47,8 @@
   backdrop-filter: blur(12px);
   color: #f4faff;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
   transform: translateY(12px) scale(0.98);
   opacity: 0;
   pointer-events: none;
@@ -139,16 +142,18 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  flex: 1;
+  min-height: 0;
 }
-
 
 .quimex-chat__messages {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  max-height: 260px;
   overflow-y: auto;
   padding-right: 6px;
+  flex: 1;
+  min-height: 200px;
 }
 
 .quimex-chat__messages::-webkit-scrollbar {
@@ -467,24 +472,47 @@ body.quimex-demo {
 
 @media (max-width: 640px) {
   .quimex-chat {
-    bottom: 82px;
-    right: 16px;
-    left: 16px;
+    bottom: 88px;
+    right: 12px;
+    left: 12px;
     width: auto;
   }
 
   .quimex-chat-widget {
     width: 100%;
-    min-height: 45vh;
-    max-height: calc(100vh - 180px);
+    border-radius: 28px;
+    min-height: clamp(360px, 55vh, 520px);
+    max-height: calc(100vh - 140px);
   }
 
   .quimex-chat-launcher {
     width: 100%;
+    border-radius: 22px;
   }
 
   .quimex-chat__messages {
-    max-height: calc(100vh - 390px);
+    min-height: clamp(180px, 40vh, 360px);
+  }
+}
+
+@media (max-width: 420px) {
+  .quimex-chat {
+    right: 10px;
+    left: 10px;
+    bottom: 80px;
+  }
+
+  .quimex-chat-widget {
+    min-height: clamp(320px, 60vh, 520px);
+    max-height: calc(100vh - 120px);
+  }
+
+  .quimex-chat__form textarea {
+    font-size: 0.95rem;
+  }
+
+  .quimex-chat-launcher {
+    padding: 12px 14px;
   }
 }
 
