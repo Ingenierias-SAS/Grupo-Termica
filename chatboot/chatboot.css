@@ -472,20 +472,30 @@ body.quimex-demo {
 
 @media (max-width: 640px) {
   .quimex-chat {
-    bottom: calc(76px + env(safe-area-inset-bottom, 0px));
-    right: 10px;
-    left: 10px;
+    bottom: calc(70px + env(safe-area-inset-bottom, 0px));
+    right: 6px;
+    left: 6px;
     width: auto;
   }
 
   .quimex-chat-widget {
     width: 100%;
     border-radius: 24px;
-    height: min(520px, calc(100vh - 120px));
-    min-height: min(360px, calc(100vh - 120px));
-    max-height: calc(100vh - 90px);
+    height: min(640px, calc(100vh - 80px));
+    min-height: min(440px, calc(100vh - 80px));
+    max-height: calc(100vh - 50px);
   }
 
+  .quimex-quick-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .quimex-quick {
+    width: 100%;
+    text-align: center;
+  }
   .quimex-chat__body {
     padding: 16px 16px 0;
     min-height: 0;
@@ -504,12 +514,12 @@ body.quimex-demo {
 
 @media (max-width: 420px) {
   .quimex-chat {
-    bottom: calc(70px + env(safe-area-inset-bottom, 0px));
+    bottom: calc(64px + env(safe-area-inset-bottom, 0px));
   }
 
   .quimex-chat-widget {
-    height: min(460px, calc(100vh - 110px));
-    min-height: min(300px, calc(100vh - 110px));
+    height: min(580px, calc(100vh - 80px));
+    min-height: min(400px, calc(100vh - 80px));
   }
 
   .quimex-chat__header {
