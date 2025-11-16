@@ -37,6 +37,7 @@
 }
 
 .quimex-chat-widget {
+  position: relative;
   width: 340px;
   max-width: calc(100vw - 40px);
   max-height: 540px;
@@ -53,6 +54,7 @@
   opacity: 0;
   pointer-events: none;
   transition: transform 0.25s ease, opacity 0.25s ease;
+  z-index: 2;
 }
 
 .quimex-chat.is-open .quimex-chat-widget {
@@ -263,6 +265,11 @@
   overflow: hidden;
   box-shadow: var(--quimex-shadow);
   pointer-events: auto;
+  z-index: 1;
+}
+
+.quimex-chat.is-open .quimex-chat-launcher {
+  z-index: 0;
 }
 
 .quimex-chat-launcher .launcher__pulse {
@@ -280,11 +287,11 @@
   display: grid;
   place-items: center;
   font-size: 1.2rem;
-  z-index: 2;
+  z-index: inherit;
 }
 
 .quimex-chat-launcher .launcher__text {
-  z-index: 2;
+  z-index: inherit;
   display: flex;
   flex-direction: column;
   font-size: 0.85rem;
@@ -473,17 +480,26 @@ body.quimex-demo {
 @media (max-width: 640px) {
   .quimex-chat {
     bottom: calc(70px + env(safe-area-inset-bottom, 0px));
-    right: 6px;
-    left: 6px;
+    right: 10px;
+    left: auto;
     width: auto;
+    transform: none;
   }
 
   .quimex-chat-widget {
-    width: 100%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: min(94vw, 460px);
     border-radius: 24px;
     height: min(640px, calc(100vh - 80px));
     min-height: min(440px, calc(100vh - 80px));
     max-height: calc(100vh - 50px);
+    transform: translate(-50%, -50%) scale(0.98);
+  }
+
+  .quimex-chat.is-open .quimex-chat-widget {
+    transform: translate(-50%, -50%) scale(1);
   }
 
   .quimex-quick-list {
