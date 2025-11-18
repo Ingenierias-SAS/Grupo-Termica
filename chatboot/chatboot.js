@@ -65,7 +65,7 @@
     const fallbackReplies = [
       'Gracias por escribir a Grupo Termica. Un asesor revisara tu mensaje muy pronto.',
       'Tambien puedes escribirnos a Grupotermica2023@gmail.com o llamar al 320 295 5059.',
-      'Quimex esta en beta y pronto integraremos IA para darte respuestas mas especificas.'
+      'Plagion esta en beta y pronto integraremos IA para darte respuestas mas especificas.'
     ];
     let fallbackIndex = 0;
 
@@ -79,7 +79,7 @@
               <img src="${logoSrc}" alt="Logo Grupo Termica">
             </div>
             <div>
-              <p class="quimex-chat__title">Quimex</p>
+              <p class="quimex-chat__title">Plagion</p>
               <p class="quimex-chat__subtitle">Asistente Grupo Termica</p>
             </div>
           </div>
@@ -102,7 +102,7 @@
         <span class="launcher__pulse" aria-hidden="true"></span>
         <div class="launcher__icon" aria-hidden="true">&#128172;</div>
         <div class="launcher__text">
-          <strong>Contacta con Quimex</strong>
+          <strong>Contacta con Plagion</strong>
           <span>Tu asistente virtual</span>
         </div>
       </button>
